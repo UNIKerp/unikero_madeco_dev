@@ -1,6 +1,0 @@
-<odoo noupdate="1">
-        <record id="allow_bypass_on_production" model="ir.config_parameter">
-            <field name="key">saas_client.allow_bypass_on_production</field>
-            <field name="value">True</field>
-        </record>
-</odoo>

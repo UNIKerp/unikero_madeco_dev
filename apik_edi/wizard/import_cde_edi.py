@@ -112,14 +112,15 @@ class CommandeEDIImport(models.TransientModel):
         flux = self.env['flux.edi'].search([('name','=', 'ORDERS')], limit=1)        
         message = "Le traitement de l'intégration des commandes EDI a été lancé sur la société {} . ".format(str(self.env.company.name) )  
         self.edi_generation_erreur(code_erreur, flux, sujet, message)   
+
         if self.import_auto:
             edi_obj = self.env['parametre.edi']
             param = edi_obj.search([('id', '=', company_id.param_edi_id.id)])
-            if len(param)>0:
+            if len(param)>0:  
                 if param.type_connexion == 'ftp':
                     #
                     # Connexion FTP 
-                    #
+                    #  
                     ftp_user = param.compte_ftp_edi
                     ftp_password = param.mdp_edi
                     adresse_ftp = param.adresse_ftp
@@ -148,6 +149,7 @@ class CommandeEDIImport(models.TransientModel):
                     filenames = ftp.nlst()
 
                     for filename in filenames:
+
                         fileobj = TemporaryFile('wb+')
                         fich_integ_edi = fich_path + '/%s' % filename
                         fichier_import = filename
@@ -156,7 +158,7 @@ class CommandeEDIImport(models.TransientModel):
                             continue
 
                         fich_copie = os.path.basename(fich_integ_edi)
-                        fichier_cde_edi = open(fich_integ_edi, "wb")               
+                        fichier_cde_edi = open(fich_integ_edi, "wb")                
                         with fichier_cde_edi as f:
                             ftp.retrbinary('RETR ' + fichier_import, f.write)                
                         #fichier_donnees_edi = os.path.basename(fich_integ_edi)    
@@ -165,6 +167,7 @@ class CommandeEDIImport(models.TransientModel):
                         file_bytes = byte_data
                         fileobj.write(file_bytes)
                         fileobj.seek(0)  # We must start reading from the beginning !
+
                         lignes = self.file2import_edi(fileobj, file_bytes, fichier_import)
                         fileobj.close()
 
@@ -172,6 +175,7 @@ class CommandeEDIImport(models.TransientModel):
                             moves = self.create_commande_edi_from_import_edi(lignes)
                         else:
                             moves = False
+
                         logger.info("____________________________________")
                         logger.info("On met à jour la base de données EDI")
                         logger.info("____________________________________")
@@ -285,6 +289,7 @@ class CommandeEDIImport(models.TransientModel):
 
         else:
             fileobj = TemporaryFile('wb+')
+
             file_bytes = base64.b64decode(self.file_to_import)
             fileobj.write(file_bytes)
             fileobj.seek(0)  # We must start reading from the beginning !
@@ -298,12 +303,12 @@ class CommandeEDIImport(models.TransientModel):
                 if company_id.gestion_archivage:
                     self.copie_fichier_traite(True, self.filename)
                 else:
-                    self.delete_fichier_traite(self.filename)
+                    self.delete_fichier_traite(self.filename)     
             else:
                 if company_id.gestion_archivage:
                     self.copie_fichier_traite(False, self.filename)
                 else:
-                    self.delete_fichier_traite(self.filename)
+                    self.delete_fichier_traite(self.filename)         
         
         sujet = str(self.env.company.name) + ' - Lancement Intégration Commandes EDI : ' + str(today)        
         code_erreur = self.env['erreur.edi'].search([('name','=', '9000')], limit=1) 
@@ -1161,6 +1166,7 @@ class CommandeEDIImport(models.TransientModel):
                     # On génére la commande avec les données connues
                     # 
                     sale = self.genere_commande_vente(values_entete,values_param,values_comment,values_lignes)
+                    
                     values_entete = []
                     values_param = []
                     values_comment = []
@@ -1234,7 +1240,7 @@ class CommandeEDIImport(models.TransientModel):
                     if type_cde == '220' and code_function == '9':
                         #
                         # On créé la commande
-                        #
+                        #                                                
                         values_ent = {
                             'partner_id': partner_id,
                             'commande_edi': True,
@@ -1523,6 +1529,7 @@ class CommandeEDIImport(models.TransientModel):
             # On génére la commande avec les données connues
             # 
             sale = self.genere_commande_vente(values_entete,values_param,values_comment,values_lignes)
+                    
         return sale
 
     #########################################################################################
@@ -2423,7 +2430,6 @@ class CommandeEDIImport(models.TransientModel):
                     else:
                         sale = False        
                 else:
-                    print("******************************************* sale=false", sale)
                     sale = False        
         
         return sale        
@@ -2560,15 +2566,14 @@ class CommandeEDIImport(models.TransientModel):
         client_edi = False
         today = fields.Date.to_string(datetime.now())
         company_id =  self.env.company 
+
         partner_id = values_ent['partner_id']
         ref_cde = values_ent['client_order_ref'].strip()
 
         client = partner_obj.search([('id','=', partner_id)],limit=1)
         if client:
             if client.client_edi:
-                print("client.client_ediclient.client_edi",client.client_edi)
                 if client.edi_order:
-                    print("client.edi_orderclient.edi_orderclient.edi_order",client.edi_order)
                     client_edi = True
                 else:
                     #
@@ -2614,7 +2619,7 @@ class CommandeEDIImport(models.TransientModel):
                 message = "Le client {} n'est pas géré en EDI. ".format(client.name) 
                 message+= "La commande {} n'est pas créée. ".format(ref_cde)    
                 self.edi_generation_erreur(code_erreur, flux, sujet, message)
-        print("client_ediclient_ediclient_ediclient_edi",client_edi)
+
         return client_edi
 
     #########################################################################################

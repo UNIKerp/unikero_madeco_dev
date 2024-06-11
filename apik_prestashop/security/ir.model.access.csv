@@ -4,7 +4,7 @@ access_suivi_presta,access_suivi_presta,model_suivi_presta,base.group_user,1,1,1
 access_param_presta,access_param_presta,model_parametre_presta,base.group_user,1,1,1,1
 access_commande_presta_import,access_commande_presta_import,model_commande_presta_import,base.group_user,1,1,1,1 
 access_apik_prestashop_wizard_presta_cde,access_apik_prestashop_wizard_presta_cde,model_apik_prestashop_wizard_presta_cde,base.group_user,1,1,1,1 
-access_apik_prestashop_wizard_arc_cde_presta,access_apik_prestashop_wizard_arc_cde_presta,model_apik_prestashop_wizard_arc_cde_presta,base.group_user,1,1,1,1
+
 
 
 

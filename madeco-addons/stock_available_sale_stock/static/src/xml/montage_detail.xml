@@ -1,9 +1,0 @@
-<templates>
-    <div t-name="stock_available_sale_stock.Montage">
-        <div t-att-class="!widget.data.display_qty_widget ? 'invisible' : ''">
-            <a tabindex="0" t-attf-class="fa fa-circle {{ widget.data.assembly_time &lt; 1 ? 'text-danger' : 'text-primary' }}"/>
-        </div>
-    </div>   
-    <div t-name="stock_available_sale_stock.MontagePopOver">    
-    </div> 
-</templates>

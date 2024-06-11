@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sale_order_warning,access_sale_order_warning,model_sale_order_warning,base.group_user,1,1,1,1
-access_categorie_commande,access_categorie_commande,model_categorie_commande,base.group_user,1,1,1,1
-access_typologie_commande,access_typologie_commande,model_typologie_commande,base.group_user,1,1,1,1
-access_parametrage_route,access_parametrage_route,model_parametrage_route,base.group_user,1,1,1,1

@@ -1,9 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_apik_etl,access_apik_etl,model_apik_etl,base.group_user,1,1,1,1
-access_apik_etl_source,access_apik_etl_source,model_apik_etl_source,base.group_user,1,1,1,1
-access_apik_etl_destination,access_apik_etl_destination,model_apik_etl_destination,base.group_user,1,1,1,1
-access_apik_etl_extract,access_apik_etl_extract,model_apik_etl_extract,base.group_user,1,1,1,1
-access_apik_etl_load,access_apik_etl_load,model_apik_etl_load,base.group_user,1,1,1,1
-access_apik_etl_transformation,access_apik_etl_transformation,model_apik_etl_transformation,base.group_user,1,1,1,1
-access_apik_etl_source_ss_type,access_apik_etl_source_ss_type,model_apik_etl_source_ss_type,base.group_user,1,1,1,1
-access_apik_etl_destination_ss_type,access_apik_etl_destination_ss_type,model_apik_etl_destination_ss_type,base.group_user,1,1,1,1

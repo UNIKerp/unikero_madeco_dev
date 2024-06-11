@@ -25,7 +25,6 @@ class SaleOrder(models.Model):
     mtt_paye = fields.Float(string="Mtt payé dans PrestaShop",copy=True)
     info_liv_presta = fields.Text(string="Informations de livraison", copy=True)
     date_devis_presta = fields.Datetime(string="Date de devis")
-    
 
 
 

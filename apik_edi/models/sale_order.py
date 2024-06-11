@@ -48,7 +48,7 @@ class SaleOrder(models.Model):
     motif_refus_edi = fields.Char(string="Motif refus de la commande EDI", copy=False)
     date_devis_edi = fields.Datetime(string="Date du devis")
     ref_cde_client_final_edi = fields.Char(string="Référence de commande client final EDI RFF+UC", copy=True)
-
+    
 
     def action_confirm(self):
         #

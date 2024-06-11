@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_mrp_production_schedule_multi,access_mrp_production_schedule_multi,model_mrp_production_schedule_multi,base.group_user,1,1,1,1
-access_pdp_export_wizard,access_pdp_export_wizard,model_pdp_export_wizard,base.group_user,1,1,1,1
-access_pdp_import_wizard,access_pdp_import_wizard,model_pdp_import_wizard,base.group_user,1,1,1,1
-access_mrp_production_schedule_multi_manager,access_mrp_production_schedule_multi_manager,model_mrp_production_schedule_multi,purchase.group_purchase_manager,1,1,1,1

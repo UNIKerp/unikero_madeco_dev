@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<odoo noupdate="0">
-
-    <record id="madeco_barcode.pallet_shipping" model="product.packaging">
-        <field name="name">Pallet_Shipping</field>
-        <field name="support_expedition" eval="True"/>
-    </record>
-
-</odoo>
