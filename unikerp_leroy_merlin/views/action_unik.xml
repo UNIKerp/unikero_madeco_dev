@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_export_arc_cde_edi_automatique" model="ir.cron">
+        <field name="name">Export automatique des accusés de commandes EDI Madéco</field>
+        <field name="model_id" ref="apik_edi.model_apik_edi_wizard_arc_cde"/>
+        <field name="priority">10</field>
+        <field name="interval_number">15</field>
+        <field name="interval_type">minutes</field>
+        <field name="active">False</field>
+        <field name="numbercall">-1</field>
+        <field name="code">model.export_arc_cde_edi_unik()</field>
+    </record>
+    <!--  -->
+    <record id="maj_of_prestashop_ftp" model="ir.cron">
+        <field name="name">Mise à jour des OF MADECO</field>
+        <field name="model_id" ref="model_apik_prestashop_majof"/>
+        <field name="priority">10</field>
+        <field name="interval_number">30</field>
+        <field name="interval_type">minutes</field>
+        <field name="active">False</field>
+        <field name="numbercall">-1</field>
+        <field name="code">model.mise_a_jour_of_prestashop()</field>
+    </record>
+    <!--  -->
+    <record id="api_comfour_test_connexion_ftp" model="ir.cron">
+        <field name="name">Tracking API COMFOUR LDD LEROY MERLIN / MADECO</field>
+        <field name="model_id" ref="model_api_comfour"/>
+        <field name="priority">10</field>
+        <field name="interval_number">15</field>
+        <field name="interval_type">minutes</field>
+        <field name="active">False</field>
+        <field name="numbercall">-1</field>
+        <field name="code">model.tracking_api_comfour_ldd()</field>
+    </record>
+</odoo>

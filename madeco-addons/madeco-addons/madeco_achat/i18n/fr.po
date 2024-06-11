@@ -1,0 +1,278 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* madeco_achat
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-15 11:17+0000\n"
+"PO-Revision-Date: 2022-12-15 12:28+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.4.3\n"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid ""
+"<br/>\n"
+"                        <strong>Print date : </strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Date d'impression : </strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid ""
+"<span style=\"font-size: 16px\">  \n"
+"                                <strong>Order date : </strong>\n"
+"                            </span>"
+msgstr ""
+"<span style=\"font-size: 16px\">  \n"
+"                                <strong>Date de la commande : </strong>\n"
+"                            </span>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid ""
+"<span> Kg</span>\n"
+"                        <br/>\n"
+"                        <strong>Number of products : </strong>"
+msgstr ""
+"<span> Kg</span>\n"
+"                        <br/>\n"
+"                        <strong>Nombre de produits : </strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<span>Amount HT</span>"
+msgstr "<span>Montant HT</span>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<span>Designation</span>"
+msgstr "<span>Désignation</span>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<span>P.U. HT €</span>"
+msgstr ""
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<span>Quantity</span>"
+msgstr "<span>Quantité</span>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<span>Ref Madeco</span>"
+msgstr "<span>Réf Madeco</span>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<span>Ref Supplier</span>"
+msgstr "<span>Réf Fournisseur</span>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<span>Séverine : sbrienne@madeco.fr</span>"
+msgstr ""
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<span>UdM</span>"
+msgstr ""
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<span>Yves : ydiabat@madeco.fr</span>"
+msgstr ""
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">Sous-total</strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>ALL ORDERS MUST BE CONFIRMED BY EMAIL TO : </strong>"
+msgstr "<strong>TOUTE COMMANDE EST A CONFIRMER PAR MAIL A : </strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>Deadline : </strong>"
+msgstr "<strong>Echéance : </strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>Incoterm : </strong>"
+msgstr ""
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>Payment Terms : </strong>"
+msgstr "<strong>Conditions de paiement : </strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>Payment choice : </strong>"
+msgstr "<strong>Mode de règlement : </strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>Requested delivery date : </strong>"
+msgstr "<strong>Date de livraison demandée : </strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>Subtotal excluding VAT</strong>"
+msgstr "<strong>Total HT</strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>Supplier contact details:</strong>"
+msgstr "<strong>Coordonnées du fournisseur :</strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>To deliver to :</strong>"
+msgstr "<strong>A livrer à :</strong>"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>Total TTC</strong>"
+msgstr ""
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "<strong>Total weight : </strong>"
+msgstr "<strong>Poids total : </strong"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.product_supplierinfo_search_view_custom
+msgid "Actif"
+msgstr ""
+
+#. module: madeco_achat
+#: model:ir.model.fields,field_description:madeco_achat.field_product_supplierinfo__active
+msgid "Active"
+msgstr ""
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.product_supplierinfo_search_view_custom
+msgid "Archivé"
+msgstr ""
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "Cancelled Purchase Order :"
+msgstr "Bon de commande annulé :"
+
+#. module: madeco_achat
+#: model:ir.model.fields,field_description:madeco_achat.field_res_partner__incoterm_id
+#: model:ir.model.fields,field_description:madeco_achat.field_res_users__incoterm_id
+msgid "Code incoterm"
+msgstr ""
+
+#. module: madeco_achat
+#: model:ir.model,name:madeco_achat.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: madeco_achat
+#: model:ir.model.fields,field_description:madeco_achat.field_product_supplierinfo__display_name
+#: model:ir.model.fields,field_description:madeco_achat.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:madeco_achat.field_purchase_order_line__display_name
+#: model:ir.model.fields,field_description:madeco_achat.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: madeco_achat
+#: model:ir.model.fields,field_description:madeco_achat.field_res_partner__delai_fournisseur
+#: model:ir.model.fields,field_description:madeco_achat.field_res_users__delai_fournisseur
+msgid "Délai de livraison fournisseur"
+msgstr ""
+
+#. module: madeco_achat
+#: model:ir.model.fields,field_description:madeco_achat.field_product_supplierinfo__id
+#: model:ir.model.fields,field_description:madeco_achat.field_purchase_order__id
+#: model:ir.model.fields,field_description:madeco_achat.field_purchase_order_line__id
+#: model:ir.model.fields,field_description:madeco_achat.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: madeco_achat
+#: model:ir.model.fields,help:madeco_achat.field_product_supplierinfo__active
+msgid "If unchecked, it will allow you to hide the price without removing it."
+msgstr ""
+
+#. module: madeco_achat
+#: model:ir.model.fields,field_description:madeco_achat.field_product_supplierinfo____last_update
+#: model:ir.model.fields,field_description:madeco_achat.field_purchase_order____last_update
+#: model:ir.model.fields,field_description:madeco_achat.field_purchase_order_line____last_update
+#: model:ir.model.fields,field_description:madeco_achat.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: madeco_achat
+#: model:ir.model,name:madeco_achat.model_purchase_order
+msgid "Purchase Order"
+msgstr "Bon de Commande"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "Purchase Order :"
+msgstr "Bon de Commande :"
+
+#. module: madeco_achat
+#: model:ir.model,name:madeco_achat.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Ligne de commande"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "Request for Quotation :"
+msgstr "Demande de devis :"
+
+#. module: madeco_achat
+#: model:ir.model,name:madeco_achat.model_product_supplierinfo
+msgid "Supplier Pricelist"
+msgstr "Liste de prix du fournisseur"
+
+#. module: madeco_achat
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchaseorder_document_custom
+#: model_terms:ir.ui.view,arch_db:madeco_achat.report_purchasequotation_document_custom
+msgid "VAT"
+msgstr "TVA"

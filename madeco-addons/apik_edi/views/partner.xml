@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--
+            Vues Form EDI
+        -->
+        <record id="view_partner_form_edi_custom" model="ir.ui.view">
+            <field name="name">res.partner.form.edi.custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml"> 
+                <xpath expr="//page[@name='contact_addresses']" position="before">                    
+                    <page string="EDI" name="gestion_edi" autofocus="autofocus" attrs="{'invisible': [('client_edi', '!=', True)]}">
+                        <group col="2">
+                            <group string="Identication" >
+                                <field name="code_gln" attrs="{'required':[('client_edi', '!=', False)]}" />
+                            </group>    
+                            <group string="Paramêtres" col="1">
+                                <field name="edi_order"/>
+                                <field name="edi_ordchg"/>
+                                <field name="edi_ordrsp"/>
+                                <field name="edi_desadv"/>
+                                <field name="edi_invoic"/>
+                                <field name="edi_valid_auto"/>
+                                <field name="edi_liv_directe"/>
+                            </group>    
+                        </group>    
+                    </page>
+                </xpath>  
+                <xpath expr="//field[@name='vat']" position="after">                    
+                    <field name="client_edi" />
+                </xpath>                            
+            </field>
+        </record> 
+        <!--
+            Vues Search
+        -->
+        <record id="view_res_partner_filter_edi_custom" model="ir.ui.view">
+            <field name="name">view_res_partner_filter_edi_custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="arch" type="xml"> 
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name" filter_domain="['|', '|', '|', ('display_name', 'ilike', self), ('ref', '=', self), ('email', 'ilike', self), ('code_gln', 'ilike', self)]"/>
+
+                </xpath>
+                <xpath expr="//filter[@name='inactive']" position="before"> 
+                    <separator/>                   
+                    <filter string="Client EDI" name="client_edi" domain="[('client_edi', '=', True)]"/>
+                </xpath>
+            </field>
+        </record>         
+    </data>
+</odoo>
+
+
+

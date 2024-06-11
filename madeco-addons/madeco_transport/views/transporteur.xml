@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>        
+        <!--
+            Vue Search
+        -->        
+        <record id="madeco_transport_search" model="ir.ui.view">
+            <field name="name">madeco_transport_search</field>
+            <field name="model">madeco.transport</field>
+            <field name="arch" type="xml">
+                <search string="Mode of transport Search">
+                    <field name="name"/>
+                    <field name="type_envoi_edi" />
+                </search>
+            </field>
+        </record>
+        <!--
+            Vue Tree
+        --> 
+        <record id="madeco_transport_tree" model="ir.ui.view">
+            <field name="name">madeco_transport_tree</field>
+            <field name="model">madeco.transport</field>
+            <field name="arch" type="xml">
+                <tree string="Mode of transport">
+                    <field name="name"/>
+                    <field name="type_envoi_edi" />
+                    <field name="mode_transport_edi"/>
+                    <field name="type_transport_edi"/>
+                    <field name="company_id" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+        <!--
+            Vue Form
+        --> 
+        <record id="madeco_transport_form" model="ir.ui.view">
+            <field name="name">madeco_transport_form</field>
+            <field name="model">madeco.transport</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Mode of transport">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group string="Transport">  
+                        <field name="type_envoi_edi" />
+                        <field name="mode_transport_edi"/>
+                        <field name="type_transport_edi"/>
+                    </group>      
+                    <group name="heppner" string="Heppner" attrs="{'invisible': [('type_envoi_edi', '!=', 'heppner')]}">
+                        <field name="code_expe_heppner" />
+                        <field name="code_transporteur_heppner" />
+                        <field name="code_produit_heppner" />
+                        <field name="code_service_heppner" />
+                    </group>  
+                    <group name="dpd" string="DPD" attrs="{'invisible': [('type_envoi_edi', '!=', 'dpd')]}">
+                        <field name="dpd_type_envoi" />
+                        <field name="no_compte_chargeur_dpd" />
+                        <field name="dpd_predict" />
+                        <field name="dpd_retour" />
+                    </group>  
+                </form>
+            </field>
+        </record>
+        <record id="action_madeco_transport_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Mode of transport</field>
+            <field name="res_model">madeco.transport</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="madeco_transport_search" />
+            <field name="help" type="html">
+                <h1 class="oe_view_nocontent_create">Create a new mode of transport</h1>
+            </field> 
+        </record>              
+        <menuitem id="madeco_transport_menu"
+            name="Mode of transport"
+            parent="sale.menu_sale_config"
+            action="action_madeco_transport_act_window"
+            groups="sales_team.group_sale_manager"
+            sequence="910"
+        />  
+    </data>
+</odoo>

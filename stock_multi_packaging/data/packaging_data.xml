@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Packaging -->
+        <record id="product_packaging_box_s" model="product.packaging">
+            <!-- <field name="package_carrier_type" ref="delivery.free_delivery_carrier"/> -->
+            <field name="name">Box S</field>
+            <field eval="1" name="height"/>
+            <field eval="1" name="width"/>
+            <field eval="1" name="packaging_length"/>
+            <field eval="5" name="max_weight"/>
+        </record>
+
+        <record id="product_packaging_box_m" model="product.packaging">
+            <!-- <field name="package_carrier_type" ref="delivery.free_delivery_carrier"/> -->
+            <field name="name">Box M</field>
+            <field eval="1" name="height"/>
+            <field eval="1" name="width"/>
+            <field eval="1" name="packaging_length"/>
+            <field eval="10" name="max_weight"/>
+        </record>
+
+        <record id="product_packaging_box_m" model="product.packaging">
+            <!-- <field name="package_carrier_type" ref="delivery.free_delivery_carrier"/> -->
+            <field name="name">Box L</field>
+            <field eval="1" name="height"/>
+            <field eval="1" name="width"/>
+            <field eval="1" name="packaging_length"/>
+            <field eval="20" name="max_weight"/>
+        </record>        
+
+        <record id="product_packaging_box_xl" model="product.packaging">
+            <!-- <field name="package_carrier_type" ref="delivery.free_delivery_carrier"/> -->
+            <field name="name">Box XL</field>
+            <field eval="1" name="height"/>
+            <field eval="1" name="width"/>
+            <field eval="1" name="packaging_length"/>
+            <field eval="30" name="max_weight"/>
+        </record>
+
+        <record id="product_packaging_box_xxl" model="product.packaging">
+            <!-- <field name="package_carrier_type" ref="delivery.free_delivery_carrier"/> -->
+            <field name="name">Box XXL</field>
+            <field eval="1" name="height"/>
+            <field eval="1" name="width"/>
+            <field eval="1" name="packaging_length"/>
+            <field eval="40" name="max_weight"/>
+        </record>                         
+
+        <record id="product_packaging_pallet_europe" model="product.packaging">
+            <!-- <field name="package_carrier_type" ref="delivery.free_delivery_carrier"/> -->
+            <field name="name">Pallet (EUR)</field>
+            <field eval="1" name="height"/>
+            <field eval="1" name="width"/>
+            <field eval="1" name="packaging_length"/>
+            <field eval="1500" name="max_weight"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,458 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* saas_client
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-02 16:36+0000\n"
+"PO-Revision-Date: 2017-08-02 16:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: saas_client
+#. openerp-web
+#: code:addons/saas_client/static/src/xml/saas_dashboard.xml:39
+#, python-format
+msgid "ADHOC SaaS"
+msgstr "ADHOC SaaS"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_res_users_portal_access
+msgid "Acceso al portal?"
+msgstr "Acceso al portal?"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.view_saas_client_dashboard
+msgid "Actualizar información de productos contratados y de módulos"
+msgstr "Actualizar información de productos contratados y de módulos"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.view_saas_client_dashboard
+msgid "Actualizar productos contratados"
+msgstr "Actualizar productos contratados"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_base_config_settings_alias_domain_change_link
+msgid "Alias domain change link"
+msgstr "Alias domain change link"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.view_saas_client_dashboard
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.saas_client_new_issue_wizzard_view
+msgid "Attach a file"
+msgstr "Adjuntar un archivo"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_attachment_ids
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_res_users_authorized_for_issues
+msgid "Autorizado para tickets?"
+msgstr "Autorizado para tickets?"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.view_saas_client_dashboard
+msgid "Backup Now"
+msgstr "Backup Now"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.saas_client_new_issue_wizzard_view
+#: model:ir.ui.view,arch_db:saas_client.view_saas_client_dashboard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_company_id
+msgid "Compañía utilizada"
+msgstr "Compañía utilizada"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.saas_client_new_issue_wizzard_view
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: saas_client
+#: code:addons/saas_client/models/res_users.py:316
+#, python-format
+msgid "Could not post \"%s\" on host \"%s\".\n"
+"This is what we get: \n"
+" %s"
+msgstr "Could not post \"%s\" on host \"%s\".\n"
+"This is what we get: \n"
+" %s"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_dashboard_create_uid
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_dashboard_create_date
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_base_config_settings_current_domain
+msgid "Current domain"
+msgstr "Current domain"
+
+#. module: saas_client
+#. openerp-web
+#: code:addons/saas_client/static/src/xml/saas_dashboard.xml:61
+#, python-format
+msgid "Database storage:"
+msgstr "Database storage:"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.view_users_form
+msgid "Disable"
+msgstr "Disable"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_dashboard_display_name
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.view_saas_general_configuration
+msgid "Domain"
+msgstr "Domain"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_base_config_settings_domain_change_link
+msgid "Domain change link"
+msgstr "Domain change link"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.view_users_form
+msgid "Enable"
+msgstr "Enable"
+
+#. module: saas_client
+#. openerp-web
+#: code:addons/saas_client/static/src/xml/saas_dashboard.xml:7
+#, python-format
+msgid "Explore nuestra documentación."
+msgstr "Explore nuestra documentación."
+
+#. module: saas_client
+#. openerp-web
+#: code:addons/saas_client/static/src/xml/saas_dashboard.xml:57
+#, python-format
+msgid "File storage:"
+msgstr "File storage:"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.saas_client_new_issue_wizzard_view
+msgid "For greater agility in case solving, please create one issue for each case and provide as much information as you can."
+msgstr "For greater agility in case solving, please create one issue for each case and provide as much information as you can."
+
+#. module: saas_client
+#: code:addons/saas_client/wizards/saas_client_new_issue.py:112
+#, python-format
+msgid "For your reference and if you contact support by another channel, issue ID: %s"
+msgstr "For your reference and if you contact support by another channel, issue ID: %s"
+
+#. module: saas_client
+#. openerp-web
+#: code:addons/saas_client/static/src/xml/saas_portal.xml:11
+#, python-format
+msgid "Help and Doc"
+msgstr "Help and Doc"
+
+#. module: saas_client
+#: selection:saas_client.new_issue.wizard,priority:0
+msgid "High"
+msgstr "High"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_dashboard_id
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: saas_client
+#: code:addons/saas_client/wizards/saas_client_new_issue.py:110
+#, python-format
+msgid "Issue succesfully loaded"
+msgstr "Issue succesfully loaded"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_dashboard___last_update
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard___last_update
+msgid "Last Modified on"
+msgstr "Última Modifiación en"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_dashboard_write_uid
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_dashboard_write_date
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: saas_client
+#: selection:saas_client.new_issue.wizard,priority:0
+msgid "Low"
+msgstr "Low"
+
+#. module: saas_client
+#: code:addons/saas_client/models/res_users.py:326
+#, python-format
+msgid "Lowercase letter\n"
+""
+msgstr "Letra minúscula\n"
+""
+
+#. module: saas_client
+#. openerp-web
+#: code:addons/saas_client/static/src/xml/saas_dashboard.xml:44
+#, python-format
+msgid "Max users allowed:"
+msgstr "Máximo de usuarios permitidos:"
+
+#. module: saas_client
+#. openerp-web
+#: code:addons/saas_client/static/src/xml/saas_dashboard.xml:57
+#: code:addons/saas_client/static/src/xml/saas_dashboard.xml:61
+#, python-format
+msgid "Mb"
+msgstr "Mb"
+
+#. module: saas_client
+#: code:addons/saas_client/models/res_users.py:330
+#, python-format
+msgid "Must contain the following:\n"
+""
+msgstr "Debe contener lo siguiente:\n"
+""
+
+#. module: saas_client
+#. openerp-web
+#: code:addons/saas_client/static/src/xml/saas_portal.xml:16
+#, python-format
+msgid "New Issue"
+msgstr "New Issue"
+
+#. module: saas_client
+#: code:addons/saas_client/models/res_users.py:237
+#, python-format
+msgid "No tiene configurado acceso al portal, debe activar el mismo en la configuración de usuarios, pestaña \"SUPPORT PROVIDER DATA\""
+msgstr "No tiene configurado acceso al portal, debe activar el mismo en la configuración de usuarios, pestaña \"SUPPORT PROVIDER DATA\""
+
+#. module: saas_client
+#: selection:saas_client.new_issue.wizard,priority:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: saas_client
+#: code:addons/saas_client/models/res_users.py:278
+#, python-format
+msgid "Not Provider url configured"
+msgstr "Not Provider url configured"
+
+#. module: saas_client
+#: code:addons/saas_client/models/res_users.py:328
+#, python-format
+msgid "Numeric digit"
+msgstr "Dígito numérico"
+
+#. module: saas_client
+#: code:addons/saas_client/models/res_users.py:184
+#, python-format
+msgid "Only Admin can change his password, login and groups"
+msgstr "Only Admin can change his password, login and groups"
+
+#. module: saas_client
+#: code:addons/saas_client/models/res_users.py:332
+#, python-format
+msgid "Password must be 8 characters or more."
+msgstr "La contraseña debe tener 8 caracteres o más."
+
+#. module: saas_client
+#: code:addons/saas_client/models/res_users.py:311
+#, python-format
+msgid "Post \"%s\" on host \"%s\" must return a dictionary but returns:\n"
+"%s"
+msgstr "Post \"%s\" on host \"%s\" must return a dictionary but returns:\n"
+"%s"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_priority
+msgid "Priority"
+msgstr "Prioridad"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_resource
+msgid "Recurso afectado"
+msgstr "Recurso afectado"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_res_users_saas_provider_uuid
+msgid "SaaS Provider UUID"
+msgstr "SaaS Provider UUID"
+
+#. module: saas_client
+#: model:res.groups,name:saas_client.group_saas_support
+msgid "SaaS Support"
+msgstr "SaaS Support"
+
+#. module: saas_client
+#: model:ir.model,name:saas_client.model_saas_client_new_issue_wizard
+msgid "Saas Client - New Issue Wizard"
+msgstr "Saas Client - New Issue Wizard"
+
+#. module: saas_client
+#: model:ir.actions.act_window,name:saas_client.action_saas_client_dashboard
+#: model:ir.ui.menu,name:saas_client.menu_saas_client_dashboard
+#: model:ir.ui.view,arch_db:saas_client.view_saas_client_dashboard
+msgid "Saas Client Dashboard"
+msgstr "Saas Client Dashboard"
+
+#. module: saas_client
+#. openerp-web
+#: code:addons/saas_client/static/src/xml/saas_portal.xml:10
+#, python-format
+msgid "Service Portal"
+msgstr "Service Portal"
+
+#. module: saas_client
+#: model:ir.model.fields,help:saas_client.field_res_users_portal_access
+msgid "Si se activa acceso al portal el usuario podrá acceder para generar bases de datos, hacer backups y seguir las tickets"
+msgstr "Si se activa acceso al portal el usuario podrá acceder para generar bases de datos, hacer backups y seguir las tickets"
+
+#. module: saas_client
+#: model:ir.model.fields,help:saas_client.field_res_users_authorized_for_issues
+msgid "Si se activa, el usuario podrá cargar tickets y comunicarse  por el chat si el servicio está contratado.\n"
+"Los usuarios autorizados para tickets requieren acceso al portal"
+msgstr "Si se activa, el usuario podrá cargar tickets y comunicarse  por el chat si el servicio está contratado.\n"
+"Los usuarios autorizados para tickets requieren acceso al portal"
+
+#. module: saas_client
+#: model:res.groups,comment:saas_client.group_saas_support
+msgid "Special group for superuser. Should not be used for client users"
+msgstr "Special group for superuser. Should not be used for client users"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.saas_client_new_issue_wizzard_view
+msgid "Support New Issue"
+msgstr "Support New Issue"
+
+#. module: saas_client
+#: model:ir.actions.act_window,name:saas_client.action_saas_client_new_issue_wizzard
+msgid "Support New Ticket Wizard"
+msgstr "Soporte - Wizard de Nuevo Ticket"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.view_users_form
+msgid "Support Provider Data"
+msgstr "Support Provider Data"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_name
+msgid "Title"
+msgstr "Title"
+
+#. module: saas_client
+#: code:addons/saas_client/controllers/db.py:70
+#, python-format
+msgid "Unable to read file %s\n"
+"This is what we get: \n"
+" %s"
+msgstr "Unable to read file %s\n"
+"This is what we get: \n"
+" %s"
+
+#. module: saas_client
+#: code:addons/saas_client/controllers/db.py:86
+#, python-format
+msgid "Unable to restore bd %s, this is what we get: \n"
+" %s"
+msgstr "Unable to restore bd %s, this is what we get: \n"
+" %s"
+
+#. module: saas_client
+#: code:addons/saas_client/models/res_users.py:327
+#, python-format
+msgid "Uppercase letter\n"
+""
+msgstr "Letra mayúscula\n"
+""
+
+#. module: saas_client
+#: model:ir.model,name:saas_client.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: saas_client
+#. openerp-web
+#: code:addons/saas_client/static/src/xml/saas_dashboard.xml:48
+#, python-format
+msgid "Users count:"
+msgstr "Users count:"
+
+#. module: saas_client
+#: model:ir.model.fields,field_description:saas_client.field_saas_client_new_issue_wizard_user_id
+msgid "Usuario afectado"
+msgstr "Usuario afectado"
+
+#. module: saas_client
+#: model:ir.model.fields,help:saas_client.field_saas_client_new_issue_wizard_resource
+msgid "You can reference the model and record related to the issue, this will help our technicians to resolve the issue faster"
+msgstr "You can reference the model and record related to the issue, this will help our technicians to resolve the issue faster"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.view_saas_general_configuration
+msgid "Your Domain"
+msgstr "Your Domain"
+
+#. module: saas_client
+#: model:ir.model,name:saas_client.model_base_config_settings
+msgid "base.config.settings"
+msgstr "base.config.settings"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.view_saas_client_dashboard
+msgid "list_dbs"
+msgstr "list_dbs"
+
+#. module: saas_client
+#: model:ir.ui.view,arch_db:saas_client.saas_client_new_issue_wizzard_view
+#: model:ir.ui.view,arch_db:saas_client.view_saas_client_dashboard
+msgid "or"
+msgstr "o"
+
+#. module: saas_client
+#: model:ir.model,name:saas_client.model_saas_client_dashboard
+msgid "saas_client.dashboard"
+msgstr "saas_client.dashboard"
+

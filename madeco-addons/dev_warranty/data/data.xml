@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="record_cron_update" model="ir.cron">
+        <field name="name">Update dev warranty</field>
+        <field name="model_id" ref="mail.model_publisher_warranty_contract"></field>
+        <field name="state">code</field>
+        <field name="code">model.update_notification()</field>
+    </record>
+</odoo>

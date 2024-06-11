@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<record id="view_order_form_inherit_sale_stock_custom_transport" model="ir.ui.view">
+        <field name="name">view_order_form_inherit_sale_stock_custom_transport</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock" />
+        <field name="arch" type="xml">    
+            <xpath expr="//field[@name='warehouse_id']" position="after">
+                <field name="madeco_transport_id" domain="[('company_id', '=', company_id)]" options="{'no_open': True, 'no_create': True}"/>
+            </xpath>       
+        </field>
+    </record>    
+    <record id="sale_order_search_custom_transport" model="ir.ui.view">
+        <field name="name">sale.order.search.custom.transport</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='customer']" position="after">
+                <separator/>
+                <filter name="madeco_transport_id" string="Mode of transport" domain="[]" context="{'group_by': 'madeco_transport_id'}"/>
+            </xpath>
+            
+        </field>
+    </record>    
+    <record id="sale_order_tree_custom_transport" model="ir.ui.view">
+        <field name="name">sale.order.tree.custom.transport</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="madeco_transport_id" domain="[('company_id', '=', company_id)]" optional="hide" />
+            </xpath>
+        </field>
+    </record>    
+    <record id="sale_quotation_tree_custom_transport" model="ir.ui.view">
+        <field name="name">sale.quotation.tree.custom.transport</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="madeco_transport_id" domain="[('company_id', '=', company_id)]" optional="hide" />
+            </xpath>
+        </field>
+    </record>  
+    <record id="sale_order_form_custom_transport_intrastat" model="ir.ui.view">
+        <field name="name">sale_order_form_custom_transport_intrastat</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="intrastat_product.sale_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='intrastat_transport_id']" position="replace">
+                <field name="intrastat_transport_id" invisible="1" widget="selection"/>
+            </xpath>
+        </field>
+    </record>    
+</odoo>

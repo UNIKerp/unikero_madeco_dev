@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="record_import_encodage_utf8" model="import.encodage">
+    <field name="name">UTF-8</field>
+    <field name="code">utf-8</field>
+  </record>
+  <record id="record_import_encodage_ISO_8859_1" model="import.encodage">
+    <field name="name">ISO-8859-1</field>
+    <field name="code">ISO-8859-1</field>
+  </record>
+  <record id="record_type_source_1" model="import.type_source">
+    <field name="name">CSV UTF-8</field>
+    <field name="chargeable" eval="True"/>
+    <field name="creable" eval="True"/>
+    <field name="type_fichier" eval="True"/>
+    <field name="code">csv</field>
+    <field name="encodage" ref="record_import_encodage_utf8"/>
+  </record>
+  <record id="record_type_source_6" model="import.type_source">
+    <field name="name">CSV ISO-8859-1</field>
+    <field name="chargeable" eval="True"/>
+    <field name="creable" eval="True"/>
+    <field name="type_fichier" eval="True"/>
+    <field name="code">csv</field>
+    <field name="encodage" ref="record_import_encodage_ISO_8859_1"/>
+  </record>
+  <record id="record_type_source_2" model="import.type_source">
+    <field name="name">Odoo Local</field>
+    <field name="chargeable" eval="False"/>
+    <field name="creable" eval="False"/>
+    <field name="code">odoo_local</field>
+  </record>
+  <record id="record_type_source_3" model="import.type_source">
+    <field name="name">Odoo Distant</field>
+    <field name="chargeable" eval="True"/>
+    <field name="creable" eval="True"/>
+    <field name="code">odoo_distant</field>
+    <field name="type_odoo" eval="True"/>
+  </record>
+  <record id="record_type_source_4" model="import.type_source">
+    <field name="name">Mysql</field>
+    <field name="chargeable" eval="True"/>
+    <field name="creable" eval="True"/>
+    <field name="code">mysql</field>
+    <field name="type_base" eval="True"/>
+  </record>
+  <record id="record_type_source_5" model="import.type_source">
+    <field name="name">PostgreSQL</field>
+    <field name="chargeable" eval="True"/>
+    <field name="creable" eval="True"/>
+    <field name="code">postgresql</field>
+    <field name="type_base" eval="True"/>
+  </record>
+</odoo>

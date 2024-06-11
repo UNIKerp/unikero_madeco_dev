@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Action Export journalier des factures EDI -->
+        <record id="action_export_journalier_factures_edi" model="ir.cron">
+            <field name="name">Export journalier des factures EDI</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="priority">10</field>
+            <field name="interval_number">24</field>
+            <field name="interval_type">hours</field>
+            <field name="active">True</field>
+            <field name="numbercall">-1</field>
+            <field name="code">model.export_invoic_journalier()</field>
+        </record>
+    </data>
+</odoo>

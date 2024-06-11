@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>         
+        <record id="invoice_tree_custom" model="ir.ui.view">
+            <field name="name">invoice.tree.custom</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='move_type']" position="after">
+                    <field name="groupe_id" optional="show" />
+                    <field name="centrale_id" optional="show" />
+                    <field name="enseigne_id" optional="show" />
+                    <field name="destinataire_relance" optional="show" />
+                    <field name="partner_order_id" optional="show" />
+                    <field name="piece_imprime" optional="show" readonly='1'/>
+                </xpath> 
+            </field>
+        </record>
+        <record id="invoice_form_custom_transport" model="ir.ui.view">
+            <field name="name">invoice.form.custom.transport</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='to_check']" position="after">
+                    <field name="madeco_transport_id" readonly="1" />                    
+                </xpath>                
+            </field>
+        </record>                  
+    </data>
+</odoo>

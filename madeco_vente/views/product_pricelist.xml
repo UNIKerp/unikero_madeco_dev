@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!--
+        Vue Form
+    -->
+	<record id="product_pricelist_view_custom" model="ir.ui.view">
+        <field name="name">product_pricelist_view_custom</field>
+        <field name="model">product.pricelist</field>
+        <field name="inherit_id" ref="product.product_pricelist_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="prix_promo"/>               
+            </xpath> 
+            <xpath expr="//field[@name='item_ids']/tree/field[@name='date_start']" position="before">
+                <field name="prix_promo_item"/>               
+            </xpath>                       
+        </field>
+    </record> 
+    <!--record id="product_pricelist_view_inherit_custom" model="ir.ui.view">
+        <field name="name">product_pricelist_view_inherit_custom</field>
+        <field name="model">product.pricelist</field>
+        <field name="inherit_id" ref="product.product_pricelist_view_inherit" />
+        <field name="arch" type="xml">            
+            <xpath expr="//field[@name='item_ids']/tree/field[@name='fixed_price']" position="after">
+                <field name="prix_promo_item"/>               
+            </xpath>           
+        </field>
+    </record--> 
+    <!--
+        Vue Tree
+    -->
+	<record id="product_pricelist_view_tree_custom" model="ir.ui.view">
+        <field name="name">product_pricelist_view_tree_custom</field>
+        <field name="model">product.pricelist</field>
+        <field name="inherit_id" ref="product.product_pricelist_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="prix_promo" optional="show" />              
+            </xpath>            
+        </field>
+    </record> 
+    <!--
+        Vue Search
+    -->
+	<record id="product_pricelist_view_search_custom" model="ir.ui.view">
+        <field name="name">product_pricelist_view_search_custom</field>
+        <field name="model">product.pricelist</field>
+        <field name="inherit_id" ref="product.product_pricelist_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <field name="prix_promo" optional="show" />   
+                <filter string="Promotion" name="promotion" domain="[('prix_promo','=',True)]"/>
+                          
+            </xpath>            
+        </field>
+    </record> 
+</odoo>     

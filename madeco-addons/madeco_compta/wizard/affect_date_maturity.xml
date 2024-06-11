@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+    # Form de lancement de l'impression    
+    -->
+	<record id="aff_date_maturity_form" model="ir.ui.view">
+		<field name="name">aff.date.maturity.form</field>
+		<field name="model">aff_date_maturity</field>
+		<field name="arch" type="xml">
+			<form>
+				<group>
+					<field name="start_date" string="Date de traitement"/>
+					<footer>
+						<button name="affecter_date_maturity" type="object" string="Lancer le traitement" class="oe_highlight pull-left"/>
+						<button special="cancel" string="Annuler"/>    			
+					</footer>
+				</group>
+			</form>
+		</field>
+	</record>
+    <!--
+        Action window
+    -->
+	<record id="aff_date_maturity" model="ir.actions.act_window">
+		<field name="name">Affectation date échéance ligne</field>
+		<field name="view_mode">form</field>
+		<field name="res_model">aff_date_maturity</field>
+		<field name="binding_model_id" ref="account.model_account_move_line"/>
+		<field name="binding_view_types">list,form</field>		
+		<field name="target">new</field>
+	</record>		
+</odoo>
+    

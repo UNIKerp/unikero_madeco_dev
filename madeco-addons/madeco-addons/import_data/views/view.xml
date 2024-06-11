@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="import_source_form" model="ir.ui.view">
+      <field name="name">import.source.form</field>
+      <field name="model">import.source</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button name="creer_modele" string="Créer le modèle" type="object" attrs="{'invisible':[('model_cree','=',True)]}"/>
+            <button name="charger_donnees" string="Charger les données" type="object" attrs="{'invisible':['|',('donnees_chargees','=',True),('model_cree','=',False)]}"/>
+            <button name="supprimer_modele" string="Supprimer le modèle" type="object" attrs="{'invisible':[('model_cree','=',False)]}"/>
+          </header>
+          <group>
+            <field name="name"/>
+            <field name="ttype"/>
+            <field name="delimiter" attrs="{'invisible':[('type_fichier','=',False)]}"/>
+            <field name="fichier" attrs="{'invisible':[('type_fichier','=',False)]}"/>
+            <field name="serveur" attrs="{'invisible':[('type_odoo','=',False),('type_base','=',False)]}"/>
+            <field name="port" attrs="{'invisible':[('type_odoo','=',False),('type_base','=',False)]}"/>
+            <field name="base" attrs="{'invisible':[('type_odoo','=',False),('type_base','=',False)]}"/>
+            <field name="identifiant" attrs="{'invisible':[('type_odoo','=',False),('type_base','=',False)]}"/>
+            <field name="motdepasse" attrs="{'invisible':[('type_odoo','=',False),('type_base','=',False)]}"/>
+            <field name="encodage" attrs="{'invisible':[('type_fichier','=',False)]}"/>
+            <field name="sql" attrs="{'invisible':[('type_base','=',False)]}"/>
+            <field name="object_odoo" attrs="{'invisible':[('type_odoo','=',False)]}"/>
+            <field name="modele"/>
+            <field name="model_cree"/>
+            <field name="champs"/>
+            <field name="donnees_chargees"/>
+          </group>
+          <field name="type_fichier" invisible="1"/>
+          <field name="type_odoo" invisible="1"/>
+          <field name="type_base" invisible="1"/>
+        </form>
+      </field>
+    </record>
+
+    <record id="import_source_tree" model="ir.ui.view">
+      <field name="name">import.source.tree</field>
+      <field name="model">import.source</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="ttype"/>
+          <field name="delimiter"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="action_import_source" model="ir.actions.act_window">
+      <field name="name">Source</field>
+      <field name="res_model">import.source</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="import_data_form" model="ir.ui.view">
+      <field name="name">import.data.form</field>
+      <field name="model">import.data</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button name="lancer_moulinette" string="Lancer la moulinette" type="object" attrs="{'invisible':[('model_cree','=',False),('donnees_chargees','=',False)]}"/>
+            <button name="vider_logs" string="Vider les logs" type="object" attrs="{'invisible':[('msg_log','=',False)]}"/>
+            <button name="creer_wizard" string="Créer Wizard" type="object" attrs="{'invisible':[('model_cree','=',False),('donnees_chargees','=',False)]}"/>
+            <button name="creer_action" string="Créer Action" type="object" attrs="{'invisible':[('model_cree','=',False),('donnees_chargees','=',False)]}"/>
+          </header>
+          <group>
+            <field name="name"/>
+            <field name="source"/>
+            <field name="domain"/>
+            <field name="limit" attrs="{'invisible': [('par_bloc','=',True)]}"/>
+            <field name="offset"  attrs="{'invisible': [('par_bloc','=',True)]}"/>
+            <field name="champs"/>
+            <field name="par_bloc"/>
+            <field name="taille_bloc" attrs="{'invisible': [('par_bloc','=',False)]}"/>
+          </group>
+          <span colspan="4"><b>Les données issues du modèle (filtrées par le domaine ) se trouvent dans la variable datas, il suffit donc de les parcourir par : "for data in datas:"</b></span>
+          <br/><span> Une fonction self.log(name,message) est disponible pour suivre les logs</span>
+          <br/><span>la fonction self.get_active_ids() retourne la liste des active_id lors de l'appel par une action ou un bouton</span>
+          <br/><span>la fonction self.get_model() retourn le modèle lors de l'appel par une action ou un bouton</span>
+          <group>
+            <field name="moulinette" widget="ace" options="{'mode': 'python'}"/>
+            <field name="msg_log">
+              <tree>
+                <field name="name"/>
+                <field name="message"/>
+              </tree>
+            </field>
+          </group>
+          <field name="model_cree" invisible="1"/>
+          <field name="donnees_chargees" invisible="1"/>
+        </form>
+      </field>
+    </record>
+
+    <record id="import_data_tree" model="ir.ui.view">
+      <field name="name">import.data.tree</field>
+      <field name="model">import.data</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="ordre" widget="handle"/>
+          <field name="name"/>
+          <field name="source"/>
+          <field name="domain"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="action_import_data" model="ir.actions.act_window">
+      <field name="name">Import Data</field>
+      <field name="res_model">import.data</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="import_log_form" model="ir.ui.view">
+      <field name="name">import.log.form</field>
+      <field name="model">import.log</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="message"/>
+            <field name="import_data"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="import_log_tree" model="ir.ui.view">
+      <field name="name">import.log.tree</field>
+      <field name="model">import.log</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="message"/>
+          <field name="import_data"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="action_import_log" model="ir.actions.act_window">
+      <field name="name">LOG</field>
+      <field name="res_model">import.log</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_import_data_main" name="Import Data" web_icon="account,static/description/icon.png"/>
+    <menuitem id="menu_import_data" name="Import Data" parent="menu_import_data_main"/>
+    <menuitem id="menu_import_data_data" name="Données" parent="menu_import_data_main"/>
+    <menuitem id="menu_import_data2" sequence="1" name="Import Data" parent="menu_import_data" action="action_import_data"/>
+    <menuitem id="menu_import_source" sequence="2" name="Sources de données" parent="menu_import_data" action="action_import_source"/>
+    <menuitem id="menu_import_log" sequence="3" name="LOG" parent="menu_import_data" action="action_import_log"/>
+
+</odoo>

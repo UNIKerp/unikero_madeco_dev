@@ -1,0 +1,379 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_available_sale_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-17 12:54+0000\n"
+"PO-Revision-Date: 2022-06-17 14:56+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.4.3\n"
+
+#. module: stock_available_sale_stock
+#: model:res.groups,name:stock_available_sale_stock.access_subcontracting_deadlines_contact_sheets
+msgid "Access to subcontracting deadlines contact sheets"
+msgstr "Accéder aux fiches contact des délais de sous-traitance"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines__active
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__active
+msgid "Active"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_product_product__art_sst_no_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_product_template__art_sst_no_stock
+msgid "Article sous-traité sans stock chez le sous-traitant"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order__warehouse_id
+msgid "Assembly center"
+msgstr "Centre de montage"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__assembly_time
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.view_warehouse_custom
+msgid "Assembly time"
+msgstr "Temps de montage"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_res_company__delai_debut_disponibilite
+msgid "Availability start time (days)"
+msgstr "Heure de début de disponibilité (jours)"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__assembly_time_ok
+msgid "Calcul délai montage ok"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#. openerp-web
+#: code:addons/stock_available_sale_stock/static/src/xml/composant_detail.xml:0
+#, python-format
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: stock_available_sale_stock
+#: model:ir.model,name:stock_available_sale_stock.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__component_available
+msgid "Component available"
+msgstr "Composant disponible"
+
+#. module: stock_available_sale_stock
+#. openerp-web
+#: code:addons/stock_available_sale_stock/static/src/js/composant_detail_widget.js:0
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__detail_component
+#, python-format
+msgid "Component detail"
+msgstr "Détail du composant"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__component_replenishment_time
+msgid "Component replenishment time"
+msgstr "Temps de réapprovisionnement des composants"
+
+#. module: stock_available_sale_stock
+#: model:ir.model,name:stock_available_sale_stock.model_res_partner
+msgid "Contact"
+msgstr "Partenaire"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines__create_uid
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines__create_date
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#. openerp-web
+#: code:addons/stock_available_sale_stock/static/src/xml/composant_detail.xml:0
+#, python-format
+msgid "Date"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__date_livraison_prevue
+msgid "Date de livraison prèvue"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__availability_date
+msgid "Date of availability"
+msgstr "Date de disponibilité"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_res_company__delai_dispo_fournisseur
+msgid "Deadline for availability of components from supplier (days)"
+msgstr "Délai de disponibilité des composants auprès du fournisseur (jours)"
+
+#. module: stock_available_sale_stock
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.view_order_form_custom
+msgid "Deadlines update"
+msgstr "Mise à jour des délais"
+
+#. module: stock_available_sale_stock
+#. openerp-web
+#: code:addons/stock_available_sale_stock/static/src/xml/composant_detail.xml:0
+#, python-format
+msgid "Description"
+msgstr "Description article"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__display_alert_message
+msgid "Display Alert Message"
+msgstr "Afficher le message d'alerte"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__display_alert_message_compo
+msgid "Display Alert Message Compo"
+msgstr "Afficher la composition du message d'alerte"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__display_alert_message_montage
+msgid "Display Alert Message Montage"
+msgstr "Afficher le message d'alerte du montage"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__display_assembly_time
+msgid "Display Assembly Time"
+msgstr "Afficher le temps d'assemblage"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__display_component_error
+msgid "Display Component Error"
+msgstr "Affichage erreur de composant"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__display_component_ok
+msgid "Display Component Ok"
+msgstr "Affichage composant OK"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__display_montage_error
+msgid "Display Montage Error"
+msgstr "Affichage erreur de montage"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__display_montage_ok
+msgid "Display Montage Ok"
+msgstr "Affichage montage OK"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines__display_name
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_product_template__display_name
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_res_company__display_name
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_res_partner__display_name
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order__display_name
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse__display_name
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines__id
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_product_template__id
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_res_company__id
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_res_partner__id
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order__id
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__id
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse__id
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__id
+msgid "ID"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,help:stock_available_sale_stock.field_sale_order_line__assembly_time
+#: model:ir.model.fields,help:stock_available_sale_stock.field_sale_order_line__display_montage_error
+#: model:ir.model.fields,help:stock_available_sale_stock.field_sale_order_line__display_montage_ok
+msgid ""
+"If the indicator is red, the system failed to calculate a mount delay. "
+"Consult the warehouses."
+msgstr ""
+"Si l'indicateur est rouge, le système n'a pas réussi à calculer un délai de "
+"montage. Consulter les entrepôts."
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines____last_update
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_product_template____last_update
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_res_company____last_update
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_res_partner____last_update
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order____last_update
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line____last_update
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse____last_update
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines__write_uid
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines__write_date
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse__blocage_vente
+msgid "Ne pas afficher sur les ventes"
+msgstr ""
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields.selection,name:stock_available_sale_stock.selection__sale_order_line__component_available__no
+msgid "No"
+msgstr "Non"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__overall_lead_time
+msgid "Overall lead time in days"
+msgstr "Délai global en jours"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines__partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: stock_available_sale_stock
+#: model:ir.actions.act_window,name:stock_available_sale_stock.stock_warehouse_product_action
+#: model:ir.model,name:stock_available_sale_stock.model_partner_subcontracting_deadlines
+msgid "Partner subcontracting deadlines"
+msgstr "Délais de sous-traitance des partenaires"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order__planning_validated
+msgid "Planning validated"
+msgstr "Planning validé"
+
+#. module: stock_available_sale_stock
+#: model:ir.model,name:stock_available_sale_stock.model_product_template
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__product_tmpl_id
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse__article_ids
+msgid "Product lines"
+msgstr "Lignes article"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines__production_time
+msgid "Production time (days) + delivery"
+msgstr "Délai de production (jours) + livraison"
+
+#. module: stock_available_sale_stock
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.stock_warehouse_product_tree
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.stock_warehouse_product_view_form
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.view_crm_partner_geo_form_custom
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.view_warehouse_custom
+msgid "Products"
+msgstr "Articles"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_sale_order_line__product_uom_qty
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__quantity_max
+msgid "Quantity below"
+msgstr "En dessous de la quantité"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_partner_subcontracting_deadlines__quantity_below
+msgid "Quantity below (units)"
+msgstr "Unité de la quantité"
+
+#. module: stock_available_sale_stock
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.view_company_form_custom_billing
+msgid "Sale settings"
+msgstr "Paramètres de vente"
+
+#. module: stock_available_sale_stock
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.view_warehouse_custom
+msgid "Sales"
+msgstr "Vente"
+
+#. module: stock_available_sale_stock
+#: model:ir.model,name:stock_available_sale_stock.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: stock_available_sale_stock
+#: model:ir.model,name:stock_available_sale_stock.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne de bons de commande"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_res_partner__subcontracting_deadlines_ids
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_res_users__subcontracting_deadlines_ids
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.partner_subcontracting_deadlines_form
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.partner_subcontracting_deadlines_tree
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.view_crm_partner_geo_form_custom
+msgid "Subcontracting deadlines"
+msgstr "Délais de sous-traitance"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,help:stock_available_sale_stock.field_sale_order_line__date_livraison_prevue
+msgid ""
+"This is the delivery date promised to the customer. If set, the delivery "
+"order will be scheduled based on this date rather than product lead times."
+msgstr ""
+"Il s'agit de la date de livraison promise au client. S'il est défini, la "
+"commande de livraison sera planifiée en fonction de cette date plutôt que "
+"des délais de livraison des produits."
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__time_limit
+msgid "Time limit"
+msgstr "Limite de temps"
+
+#. module: stock_available_sale_stock
+#. openerp-web
+#: code:addons/stock_available_sale_stock/static/src/xml/composant_detail.xml:0
+#, python-format
+msgid "Try another product or see the appros"
+msgstr "Essayez un autre produit ou consultez les appros"
+
+#. module: stock_available_sale_stock
+#: model:ir.model,name:stock_available_sale_stock.model_stock_warehouse
+#: model:ir.model.fields,field_description:stock_available_sale_stock.field_stock_warehouse_product__warehouse_id
+#: model_terms:ir.ui.view,arch_db:stock_available_sale_stock.view_order_form_custom
+msgid "Warehouse"
+msgstr "Entrepôt"
+
+#. module: stock_available_sale_stock
+#: model:ir.model,name:stock_available_sale_stock.model_stock_warehouse_product
+msgid "Warehouse Product Time"
+msgstr "Temps de produit d'entrepôt"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields.selection,name:stock_available_sale_stock.selection__sale_order_line__component_available__yes
+msgid "Yes"
+msgstr "Oui"
+
+#. module: stock_available_sale_stock
+#: model:ir.model.fields.selection,name:stock_available_sale_stock.selection__sale_order_line__component_available___
+msgid "sans"
+msgstr ""

@@ -1,0 +1,11 @@
+<odoo>
+
+    <record id="base.user_root" model="res.users">
+        <field name="saas_provider_uuid">user_root_1</field>
+    </record>
+
+    <record id="base.user_demo" model="res.users">
+        <field name="saas_provider_uuid">user_demo_1</field>
+    </record>
+
+</odoo>

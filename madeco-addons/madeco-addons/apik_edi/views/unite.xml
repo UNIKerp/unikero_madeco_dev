@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--
+            Vues Form
+        -->
+        <record id="product_uom_form_view_custom" model="ir.ui.view">
+            <field name="name">product_uom_form_view_custom</field>
+            <field name="model">uom.uom</field>
+            <field name="inherit_id" ref="uom.product_uom_form_view" />
+            <field name="arch" type="xml">                 
+                <xpath expr="//group[@name='active_rounding']" position="after">      
+                    <group name="edi">              
+                        <field name="unite_edi" />
+                    </group>    
+                </xpath>                            
+            </field>
+        </record>         
+    </data>
+</odoo>

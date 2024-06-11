@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="0">
+    
+    <!-- TODO: add company_id 1 ? -->
+    <record id="madeco_barcode.packing" model="stock.picking.type">
+        <field name="name">PACKING</field>
+        <field name="sequence_code">PACK</field>
+        <field name="barcode">MD-PACK</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="step">pack</field>
+    </record>
+
+    <record id="madeco_barcode.packing_sm" model="stock.picking.type">
+        <field name="name">PACKING SM</field>
+        <field name="sequence_code">PACKSM</field>
+        <field name="barcode">MD-PACK-SM</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="step">pack</field>
+    </record>
+
+    <record id="madeco_barcode.packing_implantation" model="stock.picking.type">
+        <field name="name">PACKING IMPLANTATION</field>
+        <field name="sequence_code">PACKIMP</field>
+        <field name="barcode"></field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="step">pack</field>
+    </record>
+
+    <record id="madeco_barcode.recut" model="stock.picking.type">
+        <field name="name">RECUT</field>
+        <field name="sequence_code">RECOUPE_PACK</field>
+        <field name="barcode">REC</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="step">recut</field>
+    </record>
+
+    <record id="madeco_barcode.picking" model="stock.picking.type">
+        <field name="name">PICKING</field>
+        <field name="sequence_code">PICK</field>
+        <field name="barcode">MD-PICK</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="step">pick</field>
+    </record>
+
+    <record id="madeco_barcode.picking_recut" model="stock.picking.type">
+        <field name="name">PICKING RECUT</field>
+        <field name="sequence_code">MER</field>
+        <field name="barcode">PICK_REC</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="step">pick</field>
+    </record>
+
+    <record id="madeco_barcode.picking_sm" model="stock.picking.type">
+        <field name="name">PICKING SM</field>
+        <field name="sequence_code">PICK</field>
+        <field name="barcode">MD-PICK-SM</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="step">pick</field>
+    </record>
+
+    <record id="madeco_barcode.palletizing" model="stock.picking.type">
+        <field name="name">PALLETIZING</field>
+        <field name="sequence_code">PAL</field>
+        <field name="barcode">PAL</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="step">pallet</field>
+    </record>
+
+    <record id="madeco_barcode.shipping" model="stock.picking.type">
+        <field name="name">SHIPPING</field>
+        <field name="sequence_code">OUT</field>
+        <field name="barcode">MD-DELIVERY</field>
+        <field name="code">outgoing</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="step">ship</field>
+    </record>
+
+
+
+    <record id="madeco_barcode.packing_protecta" model="stock.picking.type">
+        <field name="name">PACKING</field>
+        <field name="sequence_code">PACK</field>
+        <field name="barcode">PR-PACK</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="company_id" eval="2"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="step">pack</field>
+    </record>
+
+    <record id="madeco_barcode.packing_sm_protecta" model="stock.picking.type">
+        <field name="name">PACKING SM</field>
+        <field name="sequence_code">PACKSM</field>
+        <field name="barcode">PR-PACK-SM</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="company_id" eval="2"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="step">pack</field>
+    </record>
+
+    <record id="madeco_barcode.packing_implantation_protecta" model="stock.picking.type">
+        <field name="name">PACKING IMPLANTATION</field>
+        <field name="sequence_code">PACKIMP</field>
+        <field name="barcode"></field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="company_id" eval="2"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="step">pack</field>
+    </record>
+
+    <record id="madeco_barcode.recut_protecta" model="stock.picking.type">
+        <field name="name">RECUT</field>
+        <field name="sequence_code">RECOUPE_PACK</field>
+        <field name="barcode">REC</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="company_id" eval="2"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="step">recut</field>
+    </record>
+
+    <record id="madeco_barcode.picking_protecta" model="stock.picking.type">
+        <field name="name">PICKING</field>
+        <field name="sequence_code">PICK</field>
+        <field name="barcode">PR-PICK</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="company_id" eval="2"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="step">pick</field>
+    </record>
+
+    <record id="madeco_barcode.picking_recut_protecta" model="stock.picking.type">
+        <field name="name">PICKING RECUT</field>
+        <field name="sequence_code">MER</field>
+        <field name="barcode">PICK_REC</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="company_id" eval="2"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="step">pick</field>
+    </record>
+
+    <record id="madeco_barcode.picking_sm_protecta" model="stock.picking.type">
+        <field name="name">PICKING SM</field>
+        <field name="sequence_code">PICK</field>
+        <field name="barcode">PR-PICK-SM</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="company_id" eval="2"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="step">pick</field>
+    </record>
+
+    <record id="madeco_barcode.palletizing_protecta" model="stock.picking.type">
+        <field name="name">PALLETIZING</field>
+        <field name="sequence_code">PAL</field>
+        <field name="barcode">PAL</field>
+        <field name="code">internal</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="company_id" eval="2"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="step">pallet</field>
+    </record>
+
+    <record id="madeco_barcode.shipping_protecta" model="stock.picking.type">
+        <field name="name">SHIPPING</field>
+        <field name="sequence_code">OUT</field>
+        <field name="barcode">PR-DELIVERY</field>
+        <field name="code">outgoing</field>
+        <field name="show_operations" eval="True"/>
+        <field name="use_existing_lots" eval="True"/>
+        <field name="company_id" eval="2"/>
+        <field name="warehouse_id" eval="False"/>
+        <field name="step">ship</field>
+    </record>
+
+</odoo>

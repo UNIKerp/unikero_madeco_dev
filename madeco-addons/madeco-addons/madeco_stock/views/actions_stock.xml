@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>        
+        <record id="action_maj_strategie_rangement_reappro" model="ir.actions.server">
+            <field name="name">MAJ stratégie de rangement dans réapprovisionnement</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="stock.model_stock_warehouse_orderpoint"/>
+            <field name="code">
+model.maj_strategie_de_rangement_dans_reappro()
+            </field>
+        </record>
+    </data>
+</odoo>

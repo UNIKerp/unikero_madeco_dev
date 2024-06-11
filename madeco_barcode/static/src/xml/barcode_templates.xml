@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" inherit_id="stock_barcode.template" xml:space="preserve">
+
+    <t t-extend="stock_barcode_lines_template">
+        <t t-jquery=".o_barcode_line_title" t-operation="after">
+            <div class="o_barcode_line_sale_description pb-1">
+                <i class="fa fa-fw fa-bars"/>
+                <span class="sale-description" t-esc="line.description_ligne_vente"/>
+            </div>
+        </t>
+    </t>
+
+</templates>

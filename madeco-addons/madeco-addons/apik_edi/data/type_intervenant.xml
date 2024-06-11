@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">  
+        <record id="by" model="type.intervenant">
+            <field name="name">BY</field>
+            <field name="libelle_type_intervenant">Acheteur</field>                    
+        </record>
+        <record id="ca" model="type.intervenant">
+            <field name="name">CA</field>
+            <field name="libelle_type_intervenant">Transporteur</field>                    
+        </record>
+        <record id="co" model="type.intervenant">
+            <field name="name">CO</field>
+            <field name="libelle_type_intervenant">Quartier général</field>                    
+        </record>
+        <record id="dl" model="type.intervenant">
+            <field name="name">DL</field>
+            <field name="libelle_type_intervenant">Affacturage</field>                    
+        </record>      
+        <record id="dp" model="type.intervenant">
+            <field name="name">DP</field>
+            <field name="libelle_type_intervenant">Envoyez à</field>                    
+        </record>
+        <record id="go" model="type.intervenant">
+            <field name="name">GO</field>
+            <field name="libelle_type_intervenant">Propriétaire des marchandises</field>                    
+        </record>
+        <record id="gy" model="type.intervenant">
+            <field name="name">GY</field>
+            <field name="libelle_type_intervenant">Partie déclarante</field>                    
+        </record>
+        <record id="iv" model="type.intervenant">
+            <field name="name">IV</field>
+            <field name="libelle_type_intervenant">Facturé à</field>                    
+        </record>
+        <record id="lsp" model="type.intervenant">
+            <field name="name">LSP</field>
+            <field name="libelle_type_intervenant">Prestataire de services logistiques</field>                    
+        </record>
+        <record id="po" model="type.intervenant">
+            <field name="name">PO</field>
+            <field name="libelle_type_intervenant">Partie de commande</field>                    
+        </record>
+        <record id="re" model="type.intervenant">
+            <field name="name">RE</field>
+            <field name="libelle_type_intervenant">Bénéficiaire / Payeur</field>                    
+        </record>
+        <record id="se" model="type.intervenant">
+            <field name="name">SE</field>
+            <field name="libelle_type_intervenant">Vendeur</field>                    
+        </record>
+        <record id="sf" model="type.intervenant">
+            <field name="name">SF</field>
+            <field name="libelle_type_intervenant">Expédier de</field>                    
+        </record>
+        <record id="sh" model="type.intervenant">
+            <field name="name">SH</field>
+            <field name="libelle_type_intervenant">Expéditeur</field>                    
+        </record>
+        <record id="su" model="type.intervenant">
+            <field name="name">SU</field>
+            <field name="libelle_type_intervenant">Vendeur</field>                    
+        </record>
+        <record id="uc" model="type.intervenant">
+            <field name="name">UC</field>
+            <field name="libelle_type_intervenant">Client final</field>                    
+        </record>
+        <record id="wh" model="type.intervenant">
+            <field name="name">WH</field>
+            <field name="libelle_type_intervenant">Gardien d'entrepôt</field>                    
+        </record>    
+        <record id="ob" model="type.intervenant">
+            <field name="name">OB</field>
+            <field name="libelle_type_intervenant">Commandé par</field>                    
+        </record>
+        <record id="pr" model="type.intervenant">
+            <field name="name">PR</field>
+            <field name="libelle_type_intervenant">Payé par</field>                    
+        </record>  
+        <record id="ud" model="type.intervenant">
+            <field name="name">UD</field>
+            <field name="libelle_type_intervenant">Client final</field>                    
+        </record>
+    </data>
+</odoo>

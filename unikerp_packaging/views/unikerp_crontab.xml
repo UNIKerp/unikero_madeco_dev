@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <record id="unikerp_retro_colis_action" model="ir.cron">
+            <field name="name">UNIKerp [cron pour ajouter les colis existants qui ne sont pas utilisés dans la table unik.colis]</field>
+            <field name="model_id" ref="model_unik_colis"/>
+            <field name="state">code</field>
+            <field name="code">model.retro_get_colis()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">1</field>
+        </record>  
+        
+        <record id="unikerp_update_colis_action" model="ir.cron">
+            <field name="name">UNIKerp [cron pour supprimer les colis utilisés dans la table unik.colis]</field>
+            <field name="model_id" ref="model_unik_colis"/>
+            <field name="state">code</field>
+            <field name="code">model.update_colis_usable_packages_barcode()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+        </record>  
+           
+    </data>
+</odoo>

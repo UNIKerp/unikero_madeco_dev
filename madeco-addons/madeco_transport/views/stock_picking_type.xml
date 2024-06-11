@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>  
+    <!--
+        Vue formes
+    -->
+    <record id="view_picking_type_form_custom2" model="ir.ui.view">
+        <field name="name">view_picking_type_form_custom2</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="apik_edi.view_picking_type_form_custom"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='desadv_edi']" position="after">
+                <field name="transport_edi"/> 
+            </xpath>             
+        </field>
+    </record>  
+</odoo>

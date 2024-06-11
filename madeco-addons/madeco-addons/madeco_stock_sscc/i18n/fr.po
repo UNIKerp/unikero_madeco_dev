@@ -1,0 +1,239 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* madeco_stock_sscc
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-09 12:56+0000\n"
+"PO-Revision-Date: 2022-09-09 14:58+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: madeco_stock_sscc
+#: model:ir.actions.report,print_report_name:madeco_stock_sscc.action_report_sscc_batch_label
+#: model:ir.actions.report,print_report_name:madeco_stock_sscc.action_report_sscc_label
+#: model:ir.actions.report,print_report_name:madeco_stock_sscc.action_report_sscc_picking_label
+msgid "(object._get_report_sscc_filename())"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<span>From :</span>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<span>No</span>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<span>Ordered by :</span>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<span>To :</span>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<span>Yes</span>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<strong>Customer reference</strong>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<strong>Delivery date</strong>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<strong>Nb pieces : </strong>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<strong>Parcels : </strong>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<strong>Weight : </strong>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "<strong>XDOCK : </strong>"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "Barcode"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model:ir.model,name:madeco_stock_sscc.model_stock_picking_batch
+msgid "Batch Transfer"
+msgstr "Transfert en lot"
+
+#. module: madeco_stock_sscc
+#: model:ir.model,name:madeco_stock_sscc.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: madeco_stock_sscc
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_res_company__sscc_company_prefix
+msgid "Company prefix"
+msgstr "Préfixe entreprise"
+
+#. module: madeco_stock_sscc
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_res_company__sscc_gs1_identifier
+msgid "Data identifier GS1"
+msgstr "Identifiant de données GS1"
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "Delivery :"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_res_company__display_name
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_move_line__display_name
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_picking__display_name
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_picking_batch__display_name
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_quant_package__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: madeco_stock_sscc
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_res_company__sscc_extension_character
+msgid "Extension character"
+msgstr "Caractère d'extension"
+
+#. module: madeco_stock_sscc
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_res_company__id
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_move_line__id
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_picking__id
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_picking_batch__id
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_quant_package__id
+msgid "ID"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_quant_package__is_sscc_report_printed
+msgid "Is SSCC printed"
+msgstr "Étiquette imprimé"
+
+#. module: madeco_stock_sscc
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_res_company____last_update
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_move_line____last_update
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_picking____last_update
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_picking_batch____last_update
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_quant_package____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "N° SSCC :"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.report_sscc_label_document
+msgid "Order number :"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model:ir.model.fields,field_description:madeco_stock_sscc.field_stock_quant_package__name
+msgid "Package Reference"
+msgstr "Référence du colis"
+
+#. module: madeco_stock_sscc
+#: model:ir.model,name:madeco_stock_sscc.model_stock_quant_package
+msgid "Packages"
+msgstr "Colis"
+
+#. module: madeco_stock_sscc
+#: model:ir.model,name:madeco_stock_sscc.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Mouvements d'article (Ligne de mouvement de stock)"
+
+#. module: madeco_stock_sscc
+#: model_terms:ir.ui.view,arch_db:madeco_stock_sscc.view_company_form
+msgid "SSCC"
+msgstr ""
+
+#. module: madeco_stock_sscc
+#: model:ir.actions.report,name:madeco_stock_sscc.action_report_sscc_batch_label
+#: model:ir.actions.report,name:madeco_stock_sscc.action_report_sscc_label
+#: model:ir.actions.report,name:madeco_stock_sscc.action_report_sscc_picking_label
+msgid "SSCC Labels"
+msgstr "Étiquettes SSCC"
+
+#. module: madeco_stock_sscc
+#: code:addons/madeco_stock_sscc/models/stock_quant_package.py:0
+#, python-format
+msgid "The SSCC can't be generated, the length is incorrect"
+msgstr "Le SSCC ne peut pas être généré, la longueur est incorrecte"
+
+#. module: madeco_stock_sscc
+#: code:addons/madeco_stock_sscc/models/stock_quant_package.py:0
+#, python-format
+msgid "The SSCC can't be generated, the package type code is wrong"
+msgstr "Le SSCC ne peut pas être généré, le code du type de colis est faux"
+
+#. module: madeco_stock_sscc
+#: code:addons/madeco_stock_sscc/models/stock_quant_package.py:0
+#, python-format
+msgid "The SSCC check digit can't be computed, the length is incorrect"
+msgstr ""
+"La clé de contrôle du SSCC ne peut pas être calculée, la longueur est "
+"incorrecte"
+
+#. module: madeco_stock_sscc
+#: code:addons/madeco_stock_sscc/models/stock_quant_package.py:0
+#, python-format
+msgid "The SSCC check digit can't be computed, the result is incorrect"
+msgstr ""
+"La clé de contrôle du SSCC ne peut pas être calculée, le résultat est "
+"incorrect"
+
+#. module: madeco_stock_sscc
+#: code:addons/madeco_stock_sscc/models/res_company.py:0
+#, python-format
+msgid "The company prefix must have a length between 6 and 12"
+msgstr "Le préfixe entreprise doit avoir une longueur entre 6 et 12"
+
+#. module: madeco_stock_sscc
+#: code:addons/madeco_stock_sscc/models/res_company.py:0
+#, python-format
+msgid "The extension character must be between 0 and 9"
+msgstr "Le caractère d'extension doit être entre 0 et 9"
+
+#. module: madeco_stock_sscc
+#: code:addons/madeco_stock_sscc/models/stock_quant_package.py:0
+#, python-format
+msgid ""
+"The name (SSCC) can't be generated, the package type code must be an "
+"integer between 0 and 9"
+msgstr ""
+"Le nom (SSCC) ne peut pas être généré, le code du type de colis doit être "
+"un entier entre 0 et 9"
+
+#. module: madeco_stock_sscc
+#: model:ir.model,name:madeco_stock_sscc.model_stock_picking
+msgid "Transfer"
+msgstr "Transfert"

@@ -1,0 +1,55 @@
+# -*- coding: utf-8 -*-
+
+{
+    "name": "Madeco - Vente",
+    "sequence": '0',
+    "version": "14.0.0.0.1",
+    "author": "APIK CONSEILS - Michel GUIHENEUF",
+    "website": "http://www.apik-conseils.com",
+    "license": "AGPL-3",
+    "category": "Vertical",
+    "description": "Madeco - Vente",
+    "summary": "Madeco - Vente",
+    "depends": [
+        'base',
+        'sale',
+        'sale_management',
+        'account',
+        'sale_triple_discount',
+        'madeco_partner',  
+        'madeco_product',    
+        'customer_product_code',
+        'apik_edi',        
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/sale_order.xml",
+        "views/account_move.xml",
+        "views/product_pricelist.xml",
+        "views/product_pricelist_item.xml",
+        "views/stock_move_line.xml",
+        "views/stock_move.xml",
+        "views/stock_picking.xml",
+        "wizard/sale_order_warning.xml",
+        "report/invoice.xml",
+        "views/menu_commande.xml",
+        "views/categorie_commande.xml",
+        "views/typologie_commande.xml", 
+        "views/partner.xml",  
+        "views/sale_report.xml",
+        "views/invoice_report.xml",
+        "views/res_company.xml",
+        "views/parametrage_route.xml",
+        "data/parametrage_route.xml",
+        "views/product.xml",
+    ],
+    "demo": [
+	    
+    ],
+    'qweb': [
+        	    
+    ],
+    'installable': True,
+	'application':True,
+    'auto_install':False,
+}

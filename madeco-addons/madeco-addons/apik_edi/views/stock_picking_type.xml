@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>  
+    <!--
+        Vue formes
+    -->
+    <record id="view_picking_type_form_custom" model="ir.ui.view">
+        <field name="name">view_picking_type_form_custom</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="stock.view_picking_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='show_reserved']" position="after">
+                <field name="desadv_edi"/> 
+            </xpath>             
+        </field>
+    </record>    
+    <!--
+        Vue Search
+    -->
+    <record id="view_pickingtype_filter_custom" model="ir.ui.view">
+        <field name="name">view_pickingtype_filter_custom</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="stock.view_pickingtype_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='groupby_warehouse_id']" position="after">
+                <separator/>                
+                <filter string="Envoi DESADV par EDI" name="desadv_edi" domain="[]" context="{'group_by': 'desadv_edi'}"/>              
+            </xpath>   
+        </field>
+    </record> 
+    <!--
+        Vue Liste
+    -->
+    <record id="view_picking_type_tree_custom" model="ir.ui.view">
+        <field name="name">view_picking_type_tree_custom</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="stock.view_picking_type_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="before">
+                <field name="desadv_edi"/>
+            </xpath>   
+        </field>
+    </record>   
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<template id="assets_backend" name="mousqueton common models assets" inherit_id="web.assets_backend">
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/apik_data/static/src/lib/tabulator/js/tabulator.js"></script>
+                <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+                <script type="text/javascript" src="/apik_data/static/src/js/tabulator.js"></script>
+            </xpath>
+            <xpath expr="//link[last()]" position="after">
+                <link href="/apik_data/static/src/lib/tabulator/css/tabulator_simple.min.css" rel="stylesheet"/>
+            </xpath>
+
+        </template>
+
+
+
+
+	</data>
+</odoo>

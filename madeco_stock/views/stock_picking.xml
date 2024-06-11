@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="stock_view_picking_form_custom">
+            <field name="name">stock_view_picking_form_custom</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="categorie_commande_id" readonly="1"/>
+                    <field name="is_packaging_hidden" invisible="1"/>
+                </xpath>  
+                <xpath expr="//page[@name='operations']/field[@name='move_ids_without_package']/tree/field[@name='date_deadline']" position="after">
+                    <field name="product_name_supplier" optional="hide"/>              
+                </xpath>
+                <xpath expr="//notebook/page[@name='detailed_operations_hidden']/button[@name='action_put_in_pack']" position="attributes">
+                    <attribute name='attrs'>{'invisible':['|', ('state', 'in', ('draft', 'done', 'cancel')), ('is_packaging_hidden','=',True)]}</attribute>
+                </xpath>  
+                <xpath expr="//notebook/page[@name='detailed_operations_shown']/button[@name='action_put_in_pack']" position="attributes">
+                    <attribute name='attrs'>{'invisible':['|', ('state', 'in', ('draft', 'done', 'cancel')), ('is_packaging_hidden','=',True)]}</attribute>
+                </xpath>  
+                <xpath expr="//notebook/page[@name='operations']/button[@name='action_put_in_pack']" position="attributes">
+                    <attribute name='attrs'>{'invisible':['|', ('state', 'in', ('draft', 'done', 'cancel')), ('is_packaging_hidden','=',True)]}</attribute>
+                </xpath>               	
+            </field>            
+        </record>          
+        <record model="ir.ui.view" id="stock_view_picking_internal_search_custom">
+            <field name="name">stock_view_picking_internal_search_custom</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="categorie_commande_id" string="Order category" filter_domain="[('categorie_commande_id','ilike', self)]"/>
+                </xpath>
+                <xpath expr="//field[@name='origin']" position="replace">
+                    <field name="origin" string="Dcoument d'origine" filter_domain="['|',('origin','ilike', self),('client_order_ref','ilike', self)]"/>
+                </xpath>
+                <xpath expr="//filter[@name='picking_type']" position="after">
+                    <separator/>
+                    <filter string="Order category" name="categorie_commande_id" domain="[]" context="{'group_by': 'categorie_commande_id'}"/>                    
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="vpicktree_custom">
+            <field name="name">stock_picking_tree_custom</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="categorie_commande_id" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+	</data>
+</openerp>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="0">
+    <!--
+    #
+    # Vue Form 
+    #   
+    -->
+    <record id="view_crm_partner_geo_form_custom" model="ir.ui.view">
+        <field name="name">view_crm_partner_geo_form_custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base_geolocalize.view_crm_partner_geo_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='geo_location']" position="after">
+                <page string="Subcontracting deadlines" groups="stock_available_sale_stock.access_subcontracting_deadlines_contact_sheets">
+                    <field name="subcontracting_deadlines_ids" widget="one2many" >
+                        <tree string="Products" editable="bottom">
+                            <field name="quantity_below"/>
+                            <field name="production_time"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>            
+        </field>
+    </record>
+</odoo>

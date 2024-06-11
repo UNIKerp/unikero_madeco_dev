@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>        
+        <!--
+            Vues Form
+        -->        
+        <record id="intrastat_transport_mode_form_transport_custom" model="ir.ui.view">
+            <field name="name">intrastat_transport_mode_form_transport_custom</field>
+            <field name="model">intrastat.transport_mode</field>
+            <field name="inherit_id" ref="intrastat_product.intrastat_transport_mode_form" />
+            <field name="arch" type="xml"> 
+                <xpath expr="//group[1]" position="after">
+                    <!--group string="Transport">  
+                        <field name="type_envoi_edi" />
+                    </group>      
+                    <group name="heppner" string="Heppner" attrs="{'invisible': [('type_envoi_edi', '!=', 'heppner')]}">
+                        <field name="code_expe_heppner" />
+                        <field name="code_transporteur_heppner" />
+                        <field name="code_produit_heppner" />
+                        <field name="code_service_heppner" />
+                    </group>  
+                    <group name="dpd" string="DPD" attrs="{'invisible': [('type_envoi_edi', '!=', 'dpd')]}">
+                        <field name="dpd_type_envoi" />
+                        <field name="no_compte_chargeur_dpd" />
+                        <field name="dpd_predict" />
+                        <field name="dpd_retour" />
+                    </group-->    
+                </xpath>                                          
+            </field>
+        </record> 
+    </data>
+</odoo>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>  
+    <!--
+        Vue formes
+    -->
+    <record id="view_order_form1_presta_custom" model="ir.ui.view">
+        <field name="name">view_order_form1_presta_custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <field name="commande_presta" invisible="1"/> 
+                <page string="PrestaShop" attrs="{'invisible':[('commande_presta','=',False)]}">
+                    <group>
+                        <group string="Données client et Règlement">
+                            <group>
+                                <field name="no_cde_presta" readonly="1" />
+                                <field name="code_client_presta" readonly="1" />
+                                <field name="date_devis_presta" string="Date du devis" readonly="1"/>
+                            </group>                             
+                            <group>
+                                <field name="mtt_paye" readonly="1" /> 
+                            </group>
+                            <group>
+                                <field name="info_liv_presta" readonly="1" /> 
+                            </group>
+                        </group>  
+                        <group string="Suivi PrestaShop">
+                            <field name="cde_presta_genere" readonly="1" invisible="1"/>
+                            <field name="cde_presta_envoye" readonly="1" invisible="1"/>
+                            <field name="arc_presta_genere" readonly="1" />
+                            <field name="arc_presta_envoye" readonly="0" />
+                        </group>
+                    </group>      
+                </page>                     
+            </xpath> 
+            <xpath expr="//page[@name='order_lines']/field[@name='order_line']/form/field[@name='company_id']" position="after">
+                <field name="lig_commande_presta" invisible="1"/> 
+                <group string="prestashop" attrs="{'invisible':[('lig_commande_presta','=',False)]}">
+                    <group string="Tarification">
+                        <field name="pun_presta" readonly="1" />
+                    </group> 
+                    <group string="PrestaShop">
+                        <field name="no_ligne_presta" readonly="1" />
+                    </group>                   
+                </group>
+            </xpath>
+        </field>
+    </record>    
+    <!--
+        Vue Search
+    -->
+    <record id="sale_order_view_search_inherit_sale_presta_custom" model="ir.ui.view">
+        <field name="name">sale_order_view_search_inherit_sale_presta_custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='order_date']" position="after">
+                <separator/>
+                <!--filter string="Commande PrestaShop à envoyer" name="cde_presta_a_envoyer" 
+                    domain="[('cde_presta_genere','=', True),('cde_presta_envoye','=',False),('commande_presta','=',True)]"/-->
+                <filter string="ARC PrestaShop à envoyer" name="arc_presta_a_envoyer" 
+                    domain="[('arc_presta_genere','=', True),('arc_presta_envoye','=',False),('commande_presta','=',True)]"/>
+            </xpath>   
+        </field>
+    </record>   
+    <record id="sale_order_view_search_inherit_quotation_presta_custom" model="ir.ui.view">
+        <field name="name">sale_order_view_search_inherit_quotation_presta_custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='my_quotation']" position="after">
+                <separator/>
+                <filter string="ARC PrestaShop à envoyer" name="arc_presta_a_envoyer" 
+                    domain="[('arc_presta_genere','=', True),('arc_presta_envoye','=',False),('commande_presta','=',True)]"/>
+                <separator/>
+            </xpath>   
+        </field>
+    </record> 
+</odoo>
+
+
+

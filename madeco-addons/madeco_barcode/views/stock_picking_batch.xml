@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        
+         <record id="stock_picking_batch_tree" model="ir.ui.view">
+            <field name="name">stock.picking.batch.tree</field>
+            <field name="model">stock.picking.batch</field>
+            <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_tree" />
+            <field name="arch" type="xml"> 
+                
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="picking_type_id"/>
+                </xpath>
+
+            </field>
+        </record> 
+
+</odoo>

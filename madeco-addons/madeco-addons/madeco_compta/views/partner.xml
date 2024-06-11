@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_tree_custom" model="ir.ui.view">
+            <field name="name">res_partner_tree_custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="code_dzb" optional="show"/>
+                    <field name="num_client_dzb" optional="show"/>
+                    <field name="couvert_coface" optional="show"/>
+                    <field name="mtt_couvert_coface" optional="show"/>
+                    <field name="factor" optional="show"/>
+                </xpath>                                    
+            </field>
+        </record>        
+        <record id="view_partner_property_form_custom" model="ir.ui.view">
+            <field name="name">res.partner.property.form.custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='accounting']/group/group[@name='accounting_entries']" position="after">
+                    <group string="DZB Bank" >
+                        <field name="code_dzb" />  
+                        <field name="num_client_dzb" />                                              
+                    </group>
+                    <group string="COFACE" >
+                        <field name="couvert_coface" />  
+                        <field name="mtt_couvert_coface" />                                              
+                    </group>
+                    <group string="Facto" >
+                        <field name="factor" />  
+                    </group>
+                </xpath>
+            </field>
+        </record> 
+        <record id="view_res_partner_filter_custom" model="ir.ui.view">
+            <field name="name">res_partner_select_custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">                
+                <xpath expr="//filter[@name='inactive']" position="after"> 
+                    <separator/>
+                    <filter string="DZB Bank" name="code_dzb" domain="[('code_dzb', '=', True)]"/>
+                    <filter string="COFACE covered" name="couvert_coface" domain="[('couvert_coface', '=', True)]"/>
+                    <filter string="Factor" name="factor" domain="[('factor', '=', True)]"/>
+                </xpath>               
+            </field>
+        </record>          
+    </data>
+</odoo>

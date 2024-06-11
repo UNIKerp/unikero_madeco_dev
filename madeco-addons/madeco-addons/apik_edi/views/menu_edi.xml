@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        # Menu des ventes
+    -->
+    <menuitem id="main_menu_edi_vente" 
+        name="EDI" 
+        parent="sale.sale_menu_root"
+        groups="apik_edi.gestionnaire_edi"
+        sequence="10" 
+    />
+    <menuitem id="param_edi_menu_vente"
+        name="Paramétrage EDI"
+        parent="apik_edi.main_menu_edi_vente"
+        action="param_edi_action"
+        groups="base.group_system"
+        sequence="10"
+    />   
+    <menuitem id="main_menu_param_edi_vente" 
+        name="Paramètres EDI" 
+        parent="apik_edi.main_menu_edi_vente"
+        groups="apik_edi.gestionnaire_edi"
+        sequence="20" 
+    /> 
+    <menuitem id="flux_edi_menu_vente"
+        name="Flux EDI"
+        parent="apik_edi.main_menu_param_edi_vente"
+        action="action_flux_edi_form"
+        groups="base.group_system"
+        sequence="10"
+    />   
+    <menuitem id="erreur_edi_menu_vente"
+        name="Erreur EDI"
+        parent="apik_edi.main_menu_param_edi_vente"
+        action="action_erreur_edi_form"
+        groups="base.group_system"
+        sequence="20"
+    />    
+    <menuitem id="type_flux_edi_menu_vente"
+        name="Type de flux EDI"
+        parent="apik_edi.main_menu_param_edi_vente"
+        action="action_type_flux_edi_form"
+        groups="base.group_system"
+        sequence="30"
+    /> 
+    <menuitem id="function_flux_edi_menu_vente"
+        name="Function de flux EDI"
+        parent="apik_edi.main_menu_param_edi_vente"
+        action="action_function_flux_edi_form"
+        groups="base.group_system"
+        sequence="40"
+    /> 
+    <menuitem id="type_intervenant_edi_menu_vente"
+        name="Type intervenant flux EDI"
+        parent="apik_edi.main_menu_param_edi_vente"
+        action="action_type_intervenant_edi_form"
+        groups="base.group_system"
+        sequence="50"
+    /> 
+    <menuitem id="payment_method_edi_menu_vente"
+        name="Méthode de paiement EDI"
+        parent="apik_edi.main_menu_param_edi_vente"
+        action="action_payment_method_edi_form"
+        groups="base.group_system"
+        sequence="60"
+    /> 
+    <menuitem id="import_commande_edi_menu_vente"
+        name="Import Commande EDI "
+        parent="apik_edi.main_menu_edi_vente"
+        action="commande_edi_import_action"
+        groups="base.group_system"
+        sequence="500"
+        />        
+    <menuitem id="Suivi_edi_menu_vente"
+        name="Suivi des mouvements EDI"
+        parent="apik_edi.main_menu_edi_vente"
+        action="action_suivi_edi_form"
+        groups="base.group_system"
+        sequence="900"
+    />    
+</odoo>

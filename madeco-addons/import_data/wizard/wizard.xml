@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="import_wizard_form" model="ir.ui.view">
+    		<field name="name">import.wizard.form</field>
+    		<field name="model">import.wizard</field>
+    		<field name="arch" type="xml">
+    			<form>
+        			<group>
+    				    <field name="fichier"/>
+    				    <field name="moulinette" invisible="1"/>
+        			</group>
+    				<footer>
+    					<button name="importer" type="object" string="Importer" class="oe_highlight"/>
+    					ou
+    					<button special="cancel" string="Annuler"/>
+    				</footer>
+    			</form>
+    		</field>
+    	</record>
+    	
+        <record id="wizard_menu_form" model="ir.ui.view">
+    		<field name="name">menu.wizard.form</field>
+    		<field name="model">menu.wizard</field>
+    		<field name="arch" type="xml">
+    			<form>
+        			<group>
+    				    <field name="name"/>
+    				    <field name="menu_parent"/>
+        			</group>
+    				<footer>
+    					<button name="creer_menu" type="object" string="Créer Menu" class="oe_highlight"/>
+    					ou
+    					<button special="cancel" string="Annuler"/>
+    				</footer>
+    			</form>
+    		</field>
+    	</record>
+    	
+
+
+	</data>
+</odoo>

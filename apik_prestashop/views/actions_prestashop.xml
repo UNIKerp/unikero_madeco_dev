@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Action Import des commandes PrestaShop -->
+        <record id="action_import_cde_presta_automatique" model="ir.cron">
+            <field name="name">Import automatique des commandes PrestaShop</field>
+            <field name="model_id" ref="apik_prestashop.model_commande_presta_import"/>
+            <field name="priority">10</field>
+            <field name="interval_number">10</field>
+            <field name="interval_type">minutes</field>
+            <field name="active">False</field>
+            <field name="numbercall">-1</field>
+            <field name="code">model.import_cde_presta_automatique()</field>
+        </record>
+        <!-- Action Export des commandes PrestaShop -->
+        <!--record id="action_export_cde_presta_automatique" model="ir.cron">
+            <field name="name">Export automatique des commandes PrestaShop</field>
+            <field name="model_id" ref="apik_prestashop.model_apik_prestashop_wizard_presta_cde"/>
+            <field name="priority">10</field>
+            <field name="interval_number">15</field>
+            <field name="interval_type">minutes</field>
+            <field name="active">False</field>
+            <field name="numbercall">-1</field>
+            <field name="code">model.export_cde_presta_automatique()</field>
+        </record-->
+        <!-- Action Export des ARC de commandes PrestaShop -->
+        <record id="action_export_arc_cde_presta_automatique" model="ir.cron">
+            <field name="name">Export automatique des accusés de commandes PrestaShop</field>
+            <field name="model_id" ref="apik_prestashop.model_apik_prestashop_wizard_arc_cde_presta"/>
+            <field name="priority">10</field>
+            <field name="interval_number">15</field>
+            <field name="interval_type">minutes</field>
+            <field name="active">False</field>
+            <field name="numbercall">-1</field>
+            <field name="code">model.export_arc_cde_presta_automatique()</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_warehouse_orderpoint_tree_editable_custom">
+            <field name="name">view_warehouse_orderpoint_tree_editable_custom</field>
+            <field name="model">stock.warehouse.orderpoint</field>
+            <field name="inherit_id" ref="stock.view_warehouse_orderpoint_tree_editable"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='location_id']" position="after">
+                    <field name="strategie_location_id" />
+                </xpath>                	
+            </field>
+        </record>      
+        <record model="ir.ui.view" id="stock_reorder_report_search_custom">
+            <field name="name">stock_reorder_report_search_custom</field>
+            <field name="model">stock.warehouse.orderpoint</field>
+            <field name="inherit_id" ref="stock.stock_reorder_report_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='location_id']" position="after">
+                    <field name="strategie_location_id" groups="stock.group_stock_multi_locations"/>
+                </xpath>   
+                <xpath expr="//filter[@name='groupby_category']" position="after">
+                    <separator/>
+                    <filter string="Stratégie de lancement" name="groupby_strategie" domain="[]" context="{'group_by': 'strategie_location_id'}" groups="stock.group_stock_multi_locations"/>
+                </xpath>             	
+            </field>
+        </record>         
+	</data>
+</openerp>
