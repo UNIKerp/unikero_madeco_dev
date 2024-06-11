@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!--
+        Vue Form
+    -->
+	<record id="product_template_form_view_custom_edi" model="ir.ui.view">
+        <field name="name">product_template_form_view_custom_edi</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook//page[@name='general_information']//group//group[@name='group_general']//field[@name='type']" position="after">
+                <field name="art_frais_transport"/>               
+            </xpath>                                  
+        </field>
+    </record>         
+    <!--
+        Vue Search
+    -->
+	<record id="product_template_search_view_custom_edi" model="ir.ui.view">
+        <field name="name">product_template_search_view_custom_edi</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after"> 
+                <separator/>                 
+                <filter string="Frais de transport" name="frais_transport" domain="[('art_frais_transport','=',True)]"/>
+            </xpath>            
+        </field>
+    </record> 
+</odoo>     

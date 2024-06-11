@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_order_product_search_custom" model="ir.ui.view">
+            <field name="name">sale.report.search.custom</field>
+            <field name="model">sale.report</field>
+            <field name="inherit_id" ref="sale.view_order_product_search" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='industry_id']" position="after">
+                    <separator/>
+                    <field name="categorie_commande_id" string="Order category"/>
+                    <field name="typologie_commande_id" string="Order typology"/>
+                    <separator/>
+                    <field name="groupe_id" string="Groupe"/>
+                    <field name="centrale_id" string="Centrale"/>
+                    <field name="enseigne_id" string="Enseigne"/>
+                    <separator/>
+                </xpath> 
+                <xpath expr="//filter[@name='date']" position="after">
+                    <separator/>
+                    <filter string="Order category" name="categorie_commande_id" context="{'group_by':'categorie_commande_id'}"/>
+                    <filter string="Order typology" name="typologie_commande_id" context="{'group_by': 'typologie_commande_id'}"/>
+                    <separator/>
+                    <filter string="Groupe" name="group_groupe_id" context="{'group_by':'groupe_id'}"/>
+                    <filter string="Centrale" name="group_centrale_id" context="{'group_by':'centrale_id'}"/>
+                    <filter string="Enseigne" name="group_enseigne_id" context="{'group_by':'enseigne_id'}"/>
+                </xpath>                
+            </field>
+        </record>
+    </data>
+</odoo>    

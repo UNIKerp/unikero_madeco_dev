@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+	<t t-inherit="mrp_mps.mrp_mps_control_panel_buttons" t-inherit-mode="extension">
+		<xpath expr="//button[hasclass('o_mrp_mps_create')]" position="replace">
+				<button type="button" class='btn btn-secondary o_mrp_mps_create'>Add Products</button>
+				<button type="button" class='btn btn-secondary o_mrp_mps_delete'>Delete Products</button>
+				<button type="button" class='btn btn-secondary o_mrp_mps_import'>Import</button>
+				<button type="button" class='btn btn-secondary o_mrp_mps_export'>Export</button>
+				
+		</xpath>
+	</t>
+	
+</templates>

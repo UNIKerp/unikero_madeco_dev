@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="param_edi_tree" model="ir.ui.view">
+            <field name="name">param_edi_tree</field>
+            <field name="model">parametre.edi</field>
+            <field name="arch" type="xml">
+                <tree string="Paramètres EDI">
+                    <field name="name" />
+                    <field name="adresse_ftp"/>
+                    <field name="port_ftp" />
+                    <field name="repertoire_recup_edi" />
+                    <field name="repertoire_envoi_edi" /> 
+                    <field name="compte_ftp_edi" /> 
+                    <field name="mdp_edi" /> 
+                    <field name="type_connexion"/>
+                </tree>
+            </field>
+        </record> 
+        <record id="param_edi_form" model="ir.ui.view">
+            <field name="name">param_edi_form</field>
+            <field name="model">parametre.edi</field>
+            <field name="arch" type="xml">
+                <form string="Paramètres EDI">
+                    <sheet>
+                        <group col="2">
+                            <group name="ftp" string="Paramétrage FTP">
+                                <field name="name" />
+                                <field name="type_connexion"/>
+                                <field name="adresse_ftp"/>
+                                <field name="port_ftp" />
+                                <field name="repertoire_recup_edi" />
+                                <field name="repertoire_envoi_edi" /> 
+                                <field name="compte_ftp_edi" /> 
+                                <field name="mdp_edi" /> 
+                                <field name="rep_export_interne_edi" />
+                                <field name="rep_import_interne_edi" />
+                                <field name="rep_sauvegarde_fichier_traite" invisible='1'/>
+                                <field name="rep_sauvegarde_fichier_erreur" invisible='1' />
+                            </group>
+                            <group name="fichiers" string="Gestion des fichiers">   
+                                <field name="file_format"/>
+                                <field name="nom_fichier_cde_edi_import" />
+                                <field name="nom_fichier_arc_cde_edi_export" />
+                                <field name="nom_fichier_modif_cde_edi_import" />
+                                <field name="nom_fichier_desadv_edi_export" />
+                                <field name="nom_fichier_invoic_edi_export" />
+                            </group>  
+                            <group name="defaults" string="Paramétres par défaut">   
+                                <field name="unite_par_defaut"/>                                
+                            </group>   
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="param_edi_search" model="ir.ui.view">
+            <field name="name">param_edi_search</field>
+			<field name="model">parametre.edi</field>
+            <field name="arch" type="xml">
+                <search string="Paramètres EDI">
+                    <field name="name" string="Nom" />
+                    <field name="adresse_ftp" string="Adresse FTP" />                                
+                </search>
+            </field>
+        </record>
+        <record id="param_edi_action" model="ir.actions.act_window">
+            <field name="name">Paramètrages EDI</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">parametre.edi</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="apik_edi.param_edi_search"/>
+            <field name="help"> Lister les differents paramètrages EDI</field>
+        </record>         
+    </data>  	
+</odoo>

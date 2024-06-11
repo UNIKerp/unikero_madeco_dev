@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_picking_type_form" model="ir.ui.view">
+        <field name="name">stock.picking.type.form.inherited</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="stock.view_picking_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sequence_code']" position="before">
+                <field name="step" widget="selection_badge"/>
+            </xpath>        
+            <xpath expr="//field[@name='show_entire_packs']" position="after">
+                <field name="default_product_packaging"/>
+                <field name="repackaging_enable"/>
+                <field name="choose_package_enable"/>
+                <field name="product_packaging_ids" widget="many2many_tags"/>
+                <field name="auto_print_label_enable"/>
+                <field name="report_label_id" domain="[('model', '=', 'stock.quant.package')]" attrs="{'required': [('auto_print_label_enable', '=', True)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='show_operations']" position="before">
+                <field name="auto_print_enable"/>
+                <field name="report_id" domain="[('model', '=', 'stock.picking')]" attrs="{'required': [('auto_print_enable', '=', True)]}"/>
+                <field name="barcode_view_enable"/>
+            </xpath>             
+        </field>
+    </record>
+
+</odoo>

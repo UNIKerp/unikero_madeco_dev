@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="commande_edi_import_form" model="ir.ui.view">
+        <field name="name">commande_edi_import_form</field>
+        <field name="model">commande.edi.import</field>
+        <field name="arch" type="xml">
+            <form string="Import Account Move">
+                <group name="main">
+                    <field name="import_auto"/>
+                    <field name="file_to_import" filename="filename" attrs="{'invisible': [('import_auto', '=', True)],'required': [('import_auto', '=', False)]}"/>
+                    <field name="filename" invisible="1"/>
+                    <field name="file_format" readonly="0"/>
+                    <field name="file_encoding" attrs="{'invisible': [('file_format', '=', 'edi_csv')], 'required': [('file_format', '!=', 'edi_csv')]}"/>
+                    <field name="edi_txt_field_separator" attrs="{'invisible': [('file_format', '=', 'edi_csv')], 'required': [('file_format', '!=', 'edi_csv')]}"/>
+                </group>
+                <footer>
+                    <button name="run_import_cde_edi" type="object" string="Lancer l'import des commandes" class="oe_highlight" />
+                    <button special="cancel" string="Annuler" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="commande_edi_import_action" model="ir.actions.act_window">
+        <field name="name">Import des commandes EDI</field>
+        <field name="res_model">commande.edi.import</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_file_format':'edi_tx2'}</field> 
+    </record>    
+</odoo>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="madeco_stock_sscc.report_stock_picking_batch_sscc">
+        <t t-call="web.html_container">
+            <div class="header"></div>
+
+            <t t-call="web.internal_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-if="doc.move_line_ids.mapped('result_package_id')">
+                        <t t-if="doc.picking_type_id.step == 'pack'" t-set="packages" t-value="doc.move_line_ids.mapped('result_package_id').filtered(lambda x: not x.is_sscc_report_printed)" />
+                        <t t-else="" t-set="packages" t-value="doc.move_line_ids.mapped('result_package_id').sorted('create_date', True)[0]" />
+
+                        <t t-foreach="packages" t-as="package">
+                            <div class="page">
+                                <t t-set="sscc_gs1_identifier" t-value="package.company_id.sscc_gs1_identifier if package.company_id else doc.company_id.sscc_gs1_identifier if doc.company_id else '00'" />
+
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <t t-if="doc.company_id and doc.company_id.partner_id">
+                                            <span>From :</span>
+                                            <div t-field="doc.company_id.partner_id" t-options="{'widget': 'contact', 'fields': ['name', 'address', 'phone', 'email'], 'no_marker': True}" />
+                                        </t>
+                                    </div>
+                                    <t t-set="to" t-value="doc.picking_ids.mapped('partner_id').mapped('adresse_liv_id')"/>
+                                    <div class="col-6" t-if="to">
+                                        <span>To :</span>
+                                        <div t-esc="to[0]" t-options="{'widget': 'contact', 'fields': ['name', 'address'], 'no_marker': True}" />
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                    </div>
+                                    <div class="col-6">
+                                        <t t-if="doc.scheduled_date">
+                                            <strong>Delivery date</strong>
+                                            <p t-field="doc.scheduled_date" t-options="{'widget': 'date'}" />
+                                        </t>
+                                    </div>
+                                </div>
+
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', package.name, 600, 100)" style="width: 300px; height: 50px; display: block; margin: 0 auto;" alt="Barcode" />
+                                <p class="text-center mb-4" t-esc="package.name" />
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Weight : </strong>
+                                        <span t-esc="round(sum([m.product_uom_id._compute_quantity(m.qty_done, m.product_id.uom_id) * m.product_id.weight for m in doc.move_line_ids.filtered(lambda x: x.result_package_id == package)]), 2)" />
+                                        <span t-field="package.weight_uom_name" />
+                                    </div>
+                                    <div class="col-6">    
+                                        <strong>XDOCK : </strong>
+                                        <span>Yes</span>
+                                    </div>
+                                </div>
+
+                                <div class="row" t-if="doc.picking_type_id.step == 'pallet'">
+                                    <div class="col-6">
+                                        <strong>Parcels : </strong>
+                                        <span t-esc="len(doc.move_line_ids.filtered(lambda x: x.result_package_id == package).mapped('package_id'))" />
+                                    </div>
+                                    <div class="col-6">
+                                    </div>
+                                </div>
+
+                                <div class="text-center mb-4">
+                                    <strong>
+                                        N° SSCC :
+                                        <span t-esc="package.name" />
+                                    </strong>
+                                </div>
+
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=(%s)%s&amp;width=%s&amp;height=%s' % ('Code128', sscc_gs1_identifier, package.name, 600, 100)" style="width: 300px; height:50px; display: block; margin: 0 auto;" alt="Barcode" />
+                                <p class="text-center" t-esc="'({}){}'.format(sscc_gs1_identifier, package.name)" />
+
+                                <p style="page-break-after: always;" />
+                            </div>
+                        </t>
+
+                        <t t-if="doc.picking_type_id.step == 'pack'" t-set="is_printed" t-value="packages.set_sscc_report_printed()" />
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="madeco_stock_sscc.action_report_stock_picking_batch_sscc" model="ir.actions.report">
+        <field name="name">SSCC Label</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="paperformat_id" ref="madeco_stock_sscc.paperformat_stock_picking_sscc" />
+        <field name="report_name">madeco_stock_sscc.report_stock_picking_batch_sscc</field>
+        <field name="report_file">madeco_stock_sscc.report_stock_picking_batch_sscc</field>
+        <!-- <field name="print_report_name">(object._get_report_sscc_filename())</field> -->
+    </record>
+
+</odoo>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_etiquette_laposte">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <br/>  
+                        <br/>                      
+                        <div class="row">
+                            <div class="col-10" style="font-size: 22px">                                
+                                <span t-field="o.partner_id.name"/><br/>
+                                <span t-field="o.partner_id.street"/><br/>
+                                <t t-if="o.partner_id.street2">
+                                    <span t-field="o.partner_id.street2"/><br/>
+                                </t>    
+                                <span t-field="o.partner_id.zip"/>
+                                <span t-field="o.partner_id.city"/><br/>
+                            </div> 
+                            <div class="col-2">
+                                <span/> 
+                            </div>   
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>    
+                        <br/>  
+                        <br/>                                             
+                        <div class="row">
+                            <div class="col-6">
+                                <span/> 
+                            </div>
+                            <div class="col-6" style="font-size: 16px">   
+                                <strong>Expéditeur : </strong><br/>
+                                <span t-field="o.company_id.partner_id.name"/><br/>
+                                <span t-field="o.company_id.partner_id.street"/><br/>
+                                <t t-if="o.company_id.partner_id.street2">
+                                    <span t-field="o.company_id.partner_id.street2"/><br/>
+                                </t>    
+                                <span t-field="o.company_id.partner_id.zip"/>
+                                <span t-field="o.company_id.partner_id.city"/><br/>
+                            </div>    
+                        </div>
+                        <div class="oe_structure"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

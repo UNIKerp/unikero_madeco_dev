@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="py3o_server_apix" model="py3o.server">
+        <field name="url">http://apik-py3o-py3o-1:8765/form</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">       
+        <record id="dropship" model="parametrage.route">
+            <field name="name">Dropship</field>
+            <field name="active">True</field>   
+            <field name="xdock">False</field>       
+            <field name="recoupe">False</field>     
+            <field name="implantation">False</field>     
+            <field name="typologie_article">A4</field>
+            <field name="route_id" ref="stock.route_warehouse0_mto"/>
+        </record> 
+        <record id="implantation" model="parametrage.route">
+            <field name="name">Implantation</field>
+            <field name="active">True</field>   
+            <field name="xdock">False</field>       
+            <field name="recoupe">False</field>     
+            <field name="implantation">True</field>     
+            <field name="typologie_article">A1</field>
+            <field name="route_id" ref="stock.route_warehouse0_mto"/>
+        </record>
+        <record id="recoupe_xdock" model="parametrage.route">
+            <field name="name">Recoupe XDOCK</field>
+            <field name="active">True</field>   
+            <field name="xdock">True</field>       
+            <field name="recoupe">True</field>     
+            <field name="implantation">False</field>     
+            <field name="typologie_article">A2</field>
+            <field name="route_id" ref="stock.route_warehouse0_mto"/>
+        </record> 
+        <record id="recoupe_vrac" model="parametrage.route">
+            <field name="name">Recoupe vrac</field>
+            <field name="active">True</field>   
+            <field name="xdock">False</field>       
+            <field name="recoupe">True</field>     
+            <field name="implantation">False</field>     
+            <field name="typologie_article">A2</field>
+            <field name="route_id" ref="stock.route_warehouse0_mto"/>
+        </record> 
+        <record id="standard_xdock" model="parametrage.route">
+            <field name="name">Standard XDOCK</field>
+            <field name="active">True</field>   
+            <field name="xdock">True</field>       
+            <field name="recoupe">False</field>     
+            <field name="implantation">False</field>     
+            <field name="typologie_article">A1</field>
+            <field name="route_id" ref="stock.route_warehouse0_mto"/>
+        </record> 
+        <record id="standard_vrac" model="parametrage.route">
+            <field name="name">Standard vrac</field>
+            <field name="active">True</field>   
+            <field name="xdock">False</field>       
+            <field name="recoupe">False</field>     
+            <field name="implantation">False</field>     
+            <field name="typologie_article">A1</field>
+            <field name="route_id" ref="stock.route_warehouse0_mto"/>
+        </record> 
+        <record id="sur_mesure_xdock" model="parametrage.route">
+            <field name="name">Sur-Mesure XDOCK</field>
+            <field name="active">True</field>   
+            <field name="xdock">True</field>       
+            <field name="recoupe">False</field>     
+            <field name="implantation">False</field>     
+            <field name="typologie_article">A3</field> 
+            <field name="route_id" ref="stock.route_warehouse0_mto"/>
+        </record> 
+        <record id="sur_mesure_vrac" model="parametrage.route">
+            <field name="name">Sur-Mesure vrac</field>
+            <field name="active">True</field>   
+            <field name="xdock">False</field>       
+            <field name="recoupe">False</field>     
+            <field name="implantation">False</field>     
+            <field name="typologie_article">A3</field>     
+            <field name="route_id" ref="stock.route_warehouse0_mto"/>
+        </record> 
+
+    </data>
+</odoo>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>  
+    <!--
+        Vue formes
+    -->
+    <record id="account_view_move_form_custom" model="ir.ui.view">
+        <field name="name">account_view_move_form_custom</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='other_info']/group[1]/group[@name='sale_info_group']" position="after">
+                <field name="commande_edi" invisible="1"/> 
+                <group attrs="{'invisible':[('commande_edi','=',False)]}">
+                    <group string="Informations EDI INVOIC">
+                        <field name="invoic_edi_genere" readonly="1" />
+                        <field name="invoic_edi_envoye" readonly="1" force_save="1"/> 
+                        <field name="invoice_origin" readonly="1" />
+                    </group>                      
+                </group>      
+            </xpath>             
+        </field>
+    </record>    
+    <!--
+        Vue Search
+    -->
+    <record id="view_account_invoice_filter_custom" model="ir.ui.view">
+        <field name="name">view_account_invoice_filter_custom</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='late']" position="after">
+                <separator/>
+                <filter string="Factures Edi à envoyer" name="invoic_edi_a_envoyer" 
+                    domain="[('state','=','posted'),('invoic_edi_genere','=', True),('invoic_edi_envoye','=',False)]"/>                
+            </xpath>   
+        </field>
+    </record> 
+    <!--
+        Vue Liste
+    -->
+    <record id="view_out_invoice_tree_custom" model="ir.ui.view">
+        <field name="name">view_out_invoice_tree_custom</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_out_invoice_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='action_register_payment']" position="after">
+                <button name="export_invoic" type="object" string="Export INVOIC"/>
+            </xpath>   
+        </field>
+    </record>   
+</odoo>

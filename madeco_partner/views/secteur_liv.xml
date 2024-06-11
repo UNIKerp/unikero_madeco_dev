@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0"> 
+        <record id="secteur_livraison_search" model="ir.ui.view">
+            <field name="name">secteur.livraison.search</field>
+            <field name="model">secteur.livraison</field>
+            <field name="arch" type="xml">
+                <search string="Secteur de livraison Search">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        <record id="secteur_livraison_tree" model="ir.ui.view">
+            <field name="name">secteur.livraison.tree</field>
+            <field name="model">secteur.livraison</field>
+            <field name="arch" type="xml">
+                <tree string="Secteur de livraison">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="secteur_livraison_form" model="ir.ui.view">
+            <field name="name">secteur.livraison.form</field>
+            <field name="model">secteur.livraison</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Secteur de livraison">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_secteur_livraison_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Secteur de livraison</field>
+            <field name="res_model">secteur.livraison</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="secteur_livraison_search" />
+            <field name="help" type="html">
+                <h1 class="oe_view_nocontent_create">Create a new secteur</h1>
+            </field> 
+        </record>              
+        <menuitem id="secteur_livraison_menu"
+            name="Secteurs de livraison"
+            parent="contacts.res_partner_menu_config"
+            action="action_secteur_livraison_act_window"
+            groups="base.group_system"
+            sequence="300"
+        />    
+    </data>        
+</odoo>

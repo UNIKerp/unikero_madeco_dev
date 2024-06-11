@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">  
+        <record id="dpd_predict" model="madeco.transport">
+            <field name="name">DPD Predict</field>
+            <field name="company_id" ref="base.main_company"/> 
+            <field name="mode_transport_edi">10</field>
+            <field name="type_transport_edi">31</field>
+            <field name="type_envoi_edi">dpd</field>
+            <field name="code_expe_heppner"></field>
+            <field name="code_transporteur_heppner"></field> 
+            <field name="code_produit_heppner"></field> 
+            <field name="code_service_heppner"></field>
+            <field name="no_compte_chargeur_dpd">21393</field>
+            <field name="dpd_predict">True</field>
+            <field name="dpd_retour">True</field>
+            <field name="dpd_type_envoi">classic</field>            
+        </record>
+        <record id="dpd_classic" model="madeco.transport">
+            <field name="name">DPD Classic / Export</field>
+            <field name="company_id" ref="base.main_company"/> 
+            <field name="mode_transport_edi">10</field>
+            <field name="type_transport_edi">31</field>
+            <field name="type_envoi_edi">dpd</field>
+            <field name="code_expe_heppner"></field>
+            <field name="code_transporteur_heppner"></field> 
+            <field name="code_produit_heppner"></field> 
+            <field name="code_service_heppner"></field>
+            <field name="no_compte_chargeur_dpd">17594</field>
+            <field name="dpd_predict">False</field>
+            <field name="dpd_retour">False</field>
+            <field name="dpd_type_envoi">classic</field>            
+        </record>
+        <record id="tdpd_relais" model="madeco.transport">
+            <field name="name">DPD Relais</field>
+            <field name="company_id" ref="base.main_company"/> 
+            <field name="mode_transport_edi">10</field>
+            <field name="type_transport_edi">31</field>
+            <field name="type_envoi_edi">dpd</field>
+            <field name="code_expe_heppner"></field>
+            <field name="code_transporteur_heppner"></field> 
+            <field name="code_produit_heppner"></field> 
+            <field name="code_service_heppner"></field>
+            <field name="no_compte_chargeur_dpd">22129</field>
+            <field name="dpd_predict">False</field>
+            <field name="dpd_retour">True</field>
+            <field name="dpd_type_envoi">classic</field>            
+        </record>
+        <record id="heppner_btoc" model="madeco.transport">
+            <field name="name">Heppner BtoC</field>
+            <field name="company_id" ref="base.main_company"/> 
+            <field name="mode_transport_edi">10</field>
+            <field name="type_transport_edi">31</field>
+            <field name="type_envoi_edi">heppner</field>
+            <field name="code_expe_heppner">C5256C</field>
+            <field name="code_transporteur_heppner">HEPP</field> 
+            <field name="code_produit_heppner">PAR</field> 
+            <field name="code_service_heppner"></field>
+            <field name="no_compte_chargeur_dpd"></field>
+            <field name="dpd_predict"></field>
+            <field name="dpd_retour"></field>
+            <field name="dpd_type_envoi"></field>            
+        </record>
+        <record id="heppner_btob" model="madeco.transport">
+            <field name="name">Heppner BtoB</field>
+            <field name="company_id" ref="base.main_company"/> 
+            <field name="mode_transport_edi">10</field>
+            <field name="type_transport_edi">31</field>
+            <field name="type_envoi_edi">heppner</field>
+            <field name="code_expe_heppner">C5256C</field>
+            <field name="code_transporteur_heppner">HEPP</field> 
+            <field name="code_produit_heppner">PAR</field> 
+            <field name="code_service_heppner"></field>
+            <field name="no_compte_chargeur_dpd"></field>
+            <field name="dpd_predict"></field>
+            <field name="dpd_retour"></field>
+            <field name="dpd_type_envoi"></field>            
+        </record>
+        <record id="heppner_fret" model="madeco.transport">
+            <field name="name">Heppner FRET</field>
+            <field name="company_id" ref="base.main_company"/> 
+            <field name="mode_transport_edi">10</field>
+            <field name="type_transport_edi">31</field>
+            <field name="type_envoi_edi">aucun</field>
+            <field name="code_expe_heppner"></field>
+            <field name="code_transporteur_heppner"></field> 
+            <field name="code_produit_heppner"></field> 
+            <field name="code_service_heppner"></field>
+            <field name="no_compte_chargeur_dpd"></field>
+            <field name="dpd_predict"></field>
+            <field name="dpd_retour"></field>
+            <field name="dpd_type_envoi"></field>            
+        </record>
+        <record id="gondrand_fret" model="madeco.transport">
+            <field name="name">Gondrand FRET</field>
+            <field name="company_id" ref="base.main_company"/> 
+            <field name="mode_transport_edi">10</field>
+            <field name="type_transport_edi">31</field>
+            <field name="type_envoi_edi">aucun</field>
+            <field name="code_expe_heppner"></field>
+            <field name="code_transporteur_heppner"></field> 
+            <field name="code_produit_heppner"></field> 
+            <field name="code_service_heppner"></field>
+            <field name="no_compte_chargeur_dpd"></field>
+            <field name="dpd_predict"></field>
+            <field name="dpd_retour"></field>
+            <field name="dpd_type_envoi"></field>            
+        </record>
+        <record id="retrait_madeco" model="madeco.transport">
+            <field name="name">Retrait Madéco</field>
+            <field name="company_id" ref="base.main_company"/> 
+            <field name="mode_transport_edi">10</field>
+            <field name="type_transport_edi">31</field>
+            <field name="type_envoi_edi">aucun</field>
+            <field name="code_expe_heppner"></field>
+            <field name="code_transporteur_heppner"></field> 
+            <field name="code_produit_heppner"></field> 
+            <field name="code_service_heppner"></field>
+            <field name="no_compte_chargeur_dpd"></field>
+            <field name="dpd_predict"></field>
+            <field name="dpd_retour"></field>
+            <field name="dpd_type_envoi"></field>            
+        </record>
+        <record id="laposte" model="madeco.transport">
+            <field name="name">La poste</field>
+            <field name="company_id" ref="base.main_company"/> 
+            <field name="mode_transport_edi">10</field>
+            <field name="type_transport_edi">31</field>
+            <field name="type_envoi_edi">laposte</field>
+            <field name="code_expe_heppner"></field>
+            <field name="code_transporteur_heppner"></field> 
+            <field name="code_produit_heppner"></field> 
+            <field name="code_service_heppner"></field>
+            <field name="no_compte_chargeur_dpd"></field>
+            <field name="dpd_predict"></field>
+            <field name="dpd_retour"></field>
+            <field name="dpd_type_envoi"></field>            
+        </record>
+        <record id="fret" model="madeco.transport">
+            <field name="name">FRET</field>
+            <field name="company_id" ref="base.main_company"/> 
+            <field name="mode_transport_edi">10</field>
+            <field name="type_transport_edi">31</field>
+            <field name="type_envoi_edi">aucun</field>
+            <field name="code_expe_heppner"></field>
+            <field name="code_transporteur_heppner"></field> 
+            <field name="code_produit_heppner"></field> 
+            <field name="code_service_heppner"></field>
+            <field name="no_compte_chargeur_dpd"></field>
+            <field name="dpd_predict"></field>
+            <field name="dpd_retour"></field>
+            <field name="dpd_type_envoi"></field>            
+        </record>
+        <!--field name="company_id">__export__.res_company_2_8b60c24e</field-->
+    </data>
+</odoo>

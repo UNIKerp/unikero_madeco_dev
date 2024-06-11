@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>      
+    <record id="arc_commande_edi_export_wizard" model="ir.ui.view">
+        <field name="name">arc_commande_edi_export_wizard</field>
+        <field name="model">apik_edi.wizard_arc_cde</field>
+        <field name="arch" type="xml">
+            <form string="Export des ARC de commande EDI">
+                <group>
+                    <p>
+                        Voulez-vous lancer l'export ?
+                    </p>
+                </group>
+                <footer>
+                    <button name="export_arc_cde_edi" string="Export ARC Cde" type="object" class="btn-primary"/>
+                    <button string="Abandon" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field> 
+    </record> 		
+    <record id="action_export_arc_cde_edi" model="ir.actions.act_window">
+            <field name="name">Génération de l'export des ARC de commande EDI</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">apik_edi.wizard_arc_cde</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="sale.model_sale_order" />
+            <field name="binding_view_types">list,form</field>
+        </record>    		
+</odoo>

@@ -1,0 +1,118 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* madeco_compta
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-18 14:50+0000\n"
+"PO-Revision-Date: 2021-06-18 16:56+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.4.3\n"
+
+#. module: madeco_compta
+#: model_terms:ir.ui.view,arch_db:madeco_compta.view_company_form_custom_billing
+msgid "Accounting settings"
+msgstr "Paramètres comptables"
+
+#. module: madeco_compta
+#: model_terms:ir.ui.view,arch_db:madeco_compta.view_partner_property_form_custom
+msgid "COFACE"
+msgstr "COFACE"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_res_partner__couvert_coface
+#: model:ir.model.fields,field_description:madeco_compta.field_res_users__couvert_coface
+#: model_terms:ir.ui.view,arch_db:madeco_compta.view_res_partner_filter_custom
+msgid "COFACE covered"
+msgstr "Couverture COFACE"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_res_partner__mtt_couvert_coface
+#: model:ir.model.fields,field_description:madeco_compta.field_res_users__mtt_couvert_coface
+msgid "COFACE covered amount"
+msgstr "Montant couvert par COFACE"
+
+#. module: madeco_compta
+#: model:ir.model,name:madeco_compta.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: madeco_compta
+#: model:ir.model,name:madeco_compta.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_res_partner__code_dzb
+#: model:ir.model.fields,field_description:madeco_compta.field_res_users__code_dzb
+#: model_terms:ir.ui.view,arch_db:madeco_compta.view_partner_property_form_custom
+#: model_terms:ir.ui.view,arch_db:madeco_compta.view_res_partner_filter_custom
+msgid "DZB Bank"
+msgstr "Banque DZB"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_res_partner__num_client_dzb
+#: model:ir.model.fields,field_description:madeco_compta.field_res_users__num_client_dzb
+msgid "DZB Bank Customer Number"
+msgstr "Numéro de client banque DZB"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_res_company__num_fourn_dzb
+msgid "DZB Bank Supplier Number"
+msgstr "Numéro de fournisseur banque DZB"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_res_company__product_escompte_id
+msgid "Discount Item Code"
+msgstr "Code article d'escompte"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_res_company__taux_escompte
+msgid "Discount rate (in %)"
+msgstr "Taux d'escompte (en %)"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_account_move_import__display_name
+#: model:ir.model.fields,field_description:madeco_compta.field_res_company__display_name
+#: model:ir.model.fields,field_description:madeco_compta.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: madeco_compta
+#: model_terms:ir.ui.view,arch_db:madeco_compta.view_partner_property_form_custom
+msgid "Facto"
+msgstr "Facto"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_res_partner__factor
+#: model:ir.model.fields,field_description:madeco_compta.field_res_users__factor
+#: model_terms:ir.ui.view,arch_db:madeco_compta.view_res_partner_filter_custom
+msgid "Factor"
+msgstr "Factor"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_account_move_import__id
+#: model:ir.model.fields,field_description:madeco_compta.field_res_company__id
+#: model:ir.model.fields,field_description:madeco_compta.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: madeco_compta
+#: model:ir.model,name:madeco_compta.model_account_move_import
+msgid "Import account move from CSV file"
+msgstr "Importer le déplacement du compte à partir du fichier CSV"
+
+#. module: madeco_compta
+#: model:ir.model.fields,field_description:madeco_compta.field_account_move_import____last_update
+#: model:ir.model.fields,field_description:madeco_compta.field_res_company____last_update
+#: model:ir.model.fields,field_description:madeco_compta.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"

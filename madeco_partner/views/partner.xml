@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--
+            Vue Tree
+        -->
+        <record id="view_partner_tree_custom" model="ir.ui.view">
+            <field name="name">res_partner_tree_custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree" />
+            <field name="arch" type="xml">                   
+                <xpath expr="//field[@name='is_company']" position="before">
+                    <field name="groupe_id" optional="show"/>
+                    <field name="centrale_id" optional="show"/>
+                    <field name="enseigne_id" optional="show"/>
+                    <field name="adresse_liv_id" optional="show"/>
+                    <field name="adresse_fac_id" optional="show"/>
+                    <field name="property_product_pricelist" optional="show"/>
+                </xpath>                 
+            </field>
+        </record>
+        <!--
+            Vue Filter
+        --> 
+        <record id="view_res_partner_filter_custom" model="ir.ui.view">
+            <field name="name">res_partner_select_custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after"> 
+                    <field name="groupe_id" invisible='1'/>
+                    <field name="centrale_id" invisible='1'/>
+                    <field name="enseigne_id" invisible='1'/>
+                    <separator/>   
+                    <field name="groupe_id" string="Groupe" filter_domain="[('groupe_id', 'ilike', self)]"/>
+                    <field name="centrale_id" string="Centrage" filter_domain="[('centrale_id', 'ilike', self)]"/>
+                    <field name="enseigne_id" string="Enseigne" filter_domain="[('enseigne_id', 'ilike', self)]"/>
+                </xpath> 
+                <xpath expr="//filter[@name='group_country']" position="after"> 
+                    <separator/>   
+                    <filter name="group_groupe" string="Groupe" context="{'group_by': 'groupe_id'}"/>
+                    <filter name="group_centrale" string="Centrale" context="{'group_by': 'centrale_id'}"/>
+                    <filter name="group_enseigne" string="Enseigne" context="{'group_by': 'enseigne_id'}"/>                    
+                </xpath>               
+            </field>
+        </record> 
+        <!--
+            Vues Form
+        -->
+        <record id="view_partner_form_custom" model="ir.ui.view">
+            <field name="name">res.partner.form.custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml"> 
+                <xpath expr="//page[@name='contact_addresses']" position="before">
+                    <page string="Groupe &amp; Enseigne" name="groupe_enseigne" autofocus="autofocus">
+                        <group>
+                            <field name="groupe_id" attrs="{'readonly': [('parent_id', '!=', False)]}" />
+                            <field name="centrale_id" attrs="{'readonly': [('parent_id', '!=', False)]}"/>
+                            <field name="enseigne_id" attrs="{'readonly': [('parent_id', '!=', False)]}"  />
+                            <field name="adresse_liv_id" attrs="{'readonly': [('parent_id', '!=', False)]}"  />
+                            <field name="adresse_fac_id" attrs="{'readonly': [('parent_id', '!=', False)]}"  />
+                        </group>    
+                    </page>                    
+                </xpath>  
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="client_web" />
+                </xpath>                            
+            </field>
+        </record> 
+        <record id="view_partner_property_form_custom" model="ir.ui.view">
+            <field name="name">res.partner.property.form.custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='accounting']/group/group[@name='accounting_entries']" position="after">
+                    <group string="Comptabilité Auxiliaire" >
+                        <field name="code_client_import_fec" />                                              
+                    </group>
+                </xpath>
+            </field>
+        </record> 
+        <record id="res_partner_view_team_custom" model="ir.ui.view">
+            <field name="name">res_partner_view_team_custom</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="sales_team.res_partner_view_team" />
+            <field name="arch" type="xml">                 
+                <xpath expr="//field[@name='team_id']" position="after">
+                    <field name="code_magasin" />
+                    <field name="franco_port" />
+                    <field name="jour_livraison_fixe" />
+                    <field name="jour_preparation" />
+                    <field name="secteur_liv_id" />
+                </xpath>                            
+            </field>
+        </record> 
+    </data>
+</odoo>

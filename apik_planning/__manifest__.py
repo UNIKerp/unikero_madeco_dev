@@ -1,0 +1,25 @@
+{
+    "name": "Apik Planning",
+    "version": "14.0.1.0.0",
+    "category": "Planning",
+    "description": """Apik Planning""",
+    "summary": "Apik Planning",
+    "website": "https://apik.cloud",
+    "author": "Apik",
+    "depends": [
+        "base",
+        "planning",
+        "project_forecast",
+        "helpdesk",
+        "helpdesk_timesheet",
+    ],
+    "data": [
+        "views/assets.xml",
+        "views/planning_slot.xml",
+    ],
+    "qweb": [],
+    "installable": True,
+    "auto_install": False,
+    "application": False,
+    "license": "LGPL-3",
+}

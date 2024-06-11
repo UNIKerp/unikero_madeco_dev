@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="0">
+		<record id="python_dict" model="apik.etl.source.ss_type">
+			<field name="name">Dict</field>
+			<field name="ttype">Python</field>
+			<field name="template"><![CDATA[dict_${fields['name']} = ${fields['python_dict']}
+${fields['name']} = etl.fromdicts(dict_${fields['name']},header=${fields['python_dict_header']})]]></field>
+			<field name="fields_name">name,python_dict,python_dict_header</field>
+		</record>
+		
+		<record id="python_list" model="apik.etl.source.ss_type">
+			<field name="name">List</field>
+			<field name="ttype">Python</field>
+			<field name="template"><![CDATA[list_${fields['name']} = ${fields['python_list']}
+${fields['name']} = etl.fromcolumns(list_${fields['name']},header=${fields['python_list_header']})]]></field>
+			<field name="fields_name">name,python_list,python_list_header</field>
+		</record>
+		
+		<record id="db_postgresql" model="apik.etl.source.ss_type">
+			<field name="name">PostgreSQL</field>
+			<field name="ttype">DB</field>
+			<field name="template"><![CDATA[import psycopg2
+connection_${fields['name']} = psycopg2.connect('dbname=${fields['db_base']} user=${fields['db_user']} password=${fields['db_password']} host=${fields['db_host']} port=${fields['db_port']}')
+${fields['name']} = etl.fromdb(connection_${fields['name']}, "${fields['db_sql']}")
+			]]></field>
+			<field name="fields_name">name,db_base,db_user,db_password,db_sql,db_host,db_port</field>
+		</record>
+		
+		<record id="db_mysql" model="apik.etl.source.ss_type">
+			<field name="name">MySQL</field>
+			<field name="ttype">DB</field>
+			<field name="template"><![CDATA[import pymysql
+connection_${fields['name']} = pymysql.connect(database=${fields['db_base']},user=${fields['db_user']},password=${fields['db_password']},host=${fields['db_host']},port=${fields['db_port']})
+${fields['name']} = etl.fromdb(connection_${fields['name']}, "${fields['db_sql']}")
+			]]></field>
+			<field name="fields_name">name,db_base,db_user,db_password,db_sql,db_host,db_port</field>
+		</record>
+		
+		<record id="manuel" model="apik.etl.source.ss_type">
+			<field name="name">Manuel</field>
+			<field name="ttype">Manuel</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="apik_data_form" model="ir.ui.view">
+        <field name="name">apik.data.form</field>
+        <field name="model">apik.data</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="creer_vue" string="Créer Pivot" type="object" attrs="{'invisible':[('vue_cree','=',True)]}"/>
+                    <button name="voir_vue" string="Voir Pivot" type="object" attrs="{'invisible':[('vue_cree','=',False)]}"/>
+                    <button name="supprimer_vue" string="Supprimer Pivot" type="object" attrs="{'invisible':[('vue_cree','=',False)]}"/>
+                </header>
+                <notebook>
+                    <page string="Requete (Export/Lecture)">
+                            <group>
+                                <field name="name"/>
+                                <field name="disable_linking"/>
+                            <field name="requete" widget="ace"/>
+                            <button name="executer" class="btn btn-primary" type="object" string="Exécuter"/>
+                            </group>
+
+                        <field name="resultat" widget="tabulator" colspan="4" class="oe_read_only"/>
+
+                    </page>
+                    <page string="Requete (MAJ)">
+                            <group>
+                            <field name="requete_maj" widget="ace"/>
+                            <button name="executer_maj" class="btn btn-primary" type="object" string="Exécuter"/>
+                            <field name="resultat_maj" class="oe_read_only"/>
+                            </group>
+                    </page>
+                    <page string="Historique">
+                        <group>
+                            <field name="historique">
+                                <tree>
+                                    <field name="name"/>
+                                    <button name="remplacer" string="Remplacer" type="object"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </notebook>
+                <field name="vue_cree" invisible="1"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="apik_data_tree" model="ir.ui.view">
+        <field name="name">apik.data.tree</field>
+        <field name="model">apik.data</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="requete"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_apik_data" model="ir.actions.act_window">
+        <field name="name">Requêtes</field>
+        <field name="res_model">apik.data</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_apik_data" name="Apik Data" groups="apik_data.group_apik_data"/>
+    <menuitem id="menu_apik_data_main" name="Apik Data" parent="menu_apik_data"/>
+    <menuitem id="menu_apik_data_requete" name="Requetes" parent="menu_apik_data_main" action="action_apik_data" sequence="1"/>
+    <menuitem id="menu_apik_data_pivots" name="Pivots" parent="menu_apik_data"/>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="choose_type_package_view_form" model="ir.ui.view">
+        <field name="name">choose.type.package.form</field>
+        <field name="model">choose.type.package</field>
+        <field name="arch" type="xml">
+            <form string="Package">
+                <field name="picking_id" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+                <field name="show_operations_details" invisible="1"/>
+                <field name="package_level" invisible="1"/>
+                <field name="package_level_ids" invisible="1"/>
+                
+                <group>
+                    <field name="allowed_packaging_ids" invisible="1" />
+                    <field
+                        name="packaging_id"
+                        required="1"
+                        widget="selection_badge"
+                        domain="[('id', 'in', allowed_packaging_ids)]"/>                
+                    <!-- <label for="shipping_weight"/>
+                    <div class="o_row" name="package_weight">
+                        <field name="shipping_weight"/>
+                        <field name="weight_uom_name"/>
+                    </div> -->
+                </group>
+                <group attrs="{'invisible': ['|', ('package_level', '=', True), ('show_operations_details', '=', False)]}">
+                    <field name="move_line_ids" readonly="1" nolabel="1">
+                        <tree>
+                            <field name="product_id"/>
+                            <field name="qty_done"/>
+                        </tree>
+                    </field>
+                </group>
+                <group attrs="{'invisible': [('package_level', '=', False)]}">
+                    <field name="package_ids" widget="many2many_checkboxes" domain="[('id', 'in', package_level_ids)]"/>
+                </group>
+                <footer>
+                    <button name="action_put_in_pack" type="object" string="Validate" class="btn-primary" 
+                        attrs="{'invisible': [('packaging_id', '=', False)]}"/>
+                    <button string="Discard" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

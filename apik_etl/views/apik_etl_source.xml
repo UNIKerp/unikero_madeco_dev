@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="apik_etl_source_form" model="ir.ui.view">
+        <field name="name">apik.etl.source.form</field>
+        <field name="model">apik.etl.source</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="ttype"/>
+                        <field name="ss_type"/>
+                    </group>
+                </group>
+                <group attrs="{'invisible':[('ttype','!=','Python')]}">
+                    <group attrs="{'invisible':[('ss_type','!=',%(apik_etl.python_dict)d)]}">
+                        <field name="python_dict" widget="ace"/>
+                        <field name="python_dict_header"/>
+                    </group>
+                    <group attrs="{'invisible':[('ss_type','!=',%(apik_etl.python_list)d)]}">
+                        <field name="python_list" widget="ace"/>
+                        <field name="python_list_header"/>
+                    </group>
+                </group>
+                <group attrs="{'invisible':[('ttype','!=','Manuel')]}" cols="4">
+                    <field name="code_etl" widget="ace"/>
+                </group>
+                <group attrs="{'invisible':[('ttype','!=','File')]}">
+                    <p>File</p>
+                </group>
+                <group attrs="{'invisible':[('ttype','!=','Odoo')]}">
+                    <p>Odoo</p>
+                </group>
+                <group attrs="{'invisible':[('ttype','!=','DB')]}">
+                    <group>
+                        <field name="db_host"/>
+                        <field name="db_user"/>
+                        <field name="db_base"/>
+
+                    </group>
+                    <group>
+                        <field name="db_port"/>
+                        <field name="db_password"/>
+                    </group>
+                    <group cols="4">
+                        <field name="db_sql"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="apik_etl_source_tree" model="ir.ui.view">
+        <field name="name">apik.etl.source.tree</field>
+        <field name="model">apik.etl.source</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="ttype"/>
+                <field name="ss_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_etl_source" model="ir.actions.act_window">
+        <field name="name">Source</field>
+        <field name="res_model">apik.etl.source</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_apik_etl_source" name="Sources" parent="menu_parent_apik_etl" action="action_etl_source"/>
+
+</odoo>

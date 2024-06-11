@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_company_form_custom_presta_billing" model="ir.ui.view">
+            <field name="name">view_company_form_custom_presta_billing</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="PrestaShop">
+                        <group>
+                            <group string="Paramétrage">
+                                <field name="param_presta_id"/>
+                                <field name="gestion_presta_user_id"/>
+                                <field name="group_presta_user_id"/>
+                                <!-- <field name="gestion_archivage" invisible="1"/> -->
+                            </group> 
+                            <group string="Facturation">
+                                <field name="france_pays_id"/>
+                                <field name="france_fiscal_position_id"/>
+                            </group>                            
+                        </group>    
+                    </page>                     
+                </xpath> 
+            </field>
+        </record>
+    </data>
+</odoo>

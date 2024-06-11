@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>    
+    <!--
+        BL client
+    -->
+    <template id="report_delivery_document_custom" inherit_id="stock.report_delivery_document">  
+        <xpath expr="//t[@t-set='address']" position="replace">
+            <t t-set="address">
+                <t t-if="o.partner_id">
+                    <t t-set="information_block">
+                        <div name="shipping_address_block">
+                            <strong>Customer details :</strong>
+                            <div t-field="o.sale_id.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
+                        </div>
+                    </t>
+                </t>
+                <t t-if="o.partner_id.parent_id">
+                    <div class="mt16">
+                        <strong>Shipping Address :</strong>
+                        <span t-field="o.partner_id.name"/><br/>
+                        <span t-field="o.partner_id.street"/><br/>
+                        <t t-if="o.partner_id.street2">
+                            <span t-field="o.partner_id.street2"/><br/>
+                        </t>   
+                        <span t-field="o.partner_id.zip"/>
+                        <span t-field="o.partner_id.city"/><br/>
+                    </div>                        
+                </t>
+                <t t-else="">
+                    <strong>Shipping Address :</strong>
+                    <address t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                </t>
+            </t>
+        </xpath>            
+        <xpath expr="//h2" position="replace">        
+            <div id="informations_type_piece">
+                <br/>
+                <div class="row col-12">
+                    <div class="text-left col-6">
+                        <span style="font-size: 16px">  
+                            <strong >Delivery form : </strong>
+                        </span> 
+                        <span style="font-size: 25px">      
+                            <strong t-field="o.name"/>
+                        </span>     
+                    </div>  
+                    <div class="text-right col-6">
+                        <span style="font-size: 16px">  
+                            <strong>Date : </strong>
+                        </span>
+                        <span style="font-size: 25px"> 
+                            <t t-set="date_bl" t-value="env['stock.picking'].recherche_date_bl(o)"/>
+                            <strong t-esc="date_bl" />                            
+                        </span>
+                    </div> 
+                </div>
+                <br/>  
+            </div>
+        </xpath>        
+        <xpath expr="//div[@name='div_origin']/.." position="replace">
+            <div id="informations_madeco">
+                <div class="row col-12">
+                    <div class="text-left col-5">
+                        <t t-set="no_cde" t-value="env['stock.picking'].recherche_no_commande(o)"/>
+                        <strong>Order number :</strong>
+                        <span t-esc="no_cde"/>
+                    </div> 
+                    <div class="col-2"/>
+                    <div class="text-left col-5">
+                        <t t-set="no_cde_client" t-value="env['stock.picking'].recherche_no_commande_client(o)"/>
+                        <strong>Customer order number :</strong>
+                        <span t-esc="no_cde_client"/>
+                    </div>
+                </div>
+                <div class="row col-12">
+                    <div class="text-left col-5">
+                        <strong></strong>
+                        <span></span>
+                    </div> 
+                    <div class="col-2"/>
+                    <div class="text-left col-5">
+                        <strong>Order date : </strong>
+                        <t t-set="date_cde" t-value="env['stock.picking'].recherche_date_commande(o)"/>
+                        <span t-esc="date_cde" widget="date"/>
+                    </div>
+                </div>
+                <div class="row col-12">
+                    <div class="text-left col-5">
+                        <strong>Carrier : </strong>
+                        <span t-field="o.madeco_transport_id.name"/>
+                    </div> 
+                    <div class="col-2"/>
+                    <div class="text-left col-5">
+                        <t t-set="nb_um" t-value="env['stock.picking'].recherche_nombre_unite_manutention(o)"/>
+                        <strong>Number of UM : </strong>
+                        <span t-esc="nb_um"/>
+                    </div> 
+                </div>
+                <div class="row col-12">
+                    <div class="text-left col-5">
+                        <strong>Expected shipping date : </strong>
+                        <t t-set="date_prevue" t-value="env['stock.picking'].recherche_date_prevue(o)"/>
+                        <span t-esc="date_prevue" widget="date"/>
+                    </div> 
+                    <div class="col-2"/>
+                    <div class="text-left col-5">
+                        <strong>Delivery Date : </strong>
+                        <t t-set="date_echeance" t-value="env['stock.picking'].recherche_date_echeance(o)"/>
+                        <span t-esc="date_echeance" widget="date"/>
+                    </div> 
+                </div>
+                <br/>
+                <div class="row col-12">
+                    <div class="text-left">
+                        <span t-raw="o.company_id.html_texte_bl" widget="html"/> 
+                    </div>
+                </div> 
+                <br/>
+            </div>
+        </xpath>  
+        <xpath expr="//table[@name='stock_move_table']" position="replace">
+            <table class="table table-sm o_main_table" t-if="o.state!='done'" name="stock_move_table">
+                <thead>
+                    <tr>
+                        <th name="th_sm_no"><strong>No</strong></th>    
+                        <th name="th_sm_product"><strong>EAN Code</strong></th>
+                        <th name="th_sm_des"><strong>Designation</strong></th>
+                        <th name="th_sm_udm"><strong>UdM</strong></th>
+                        <th name="th_sm_qte_com"><strong>Qty Com</strong></th>
+                        <th name="th_sm_qte_liv"><strong>Qty Liv</strong></th>
+                        <th name="th_sm_code_barre"><strong>Barcode</strong></th>
+                    </tr>
+                </thead>
+                <t t-set="nb_lig_sm" t-value="0"/>
+                <tbody>
+                    <t t-set="lines" t-value="o.move_lines.filtered(lambda x: x.product_uom_qty)"/>
+                    <tr t-foreach="lines" t-as="move">
+                        <t t-set="nb_lig_sm" t-value="nb_lig_sm + 1"/> 
+                        <td>
+                            <span t-esc="nb_lig_sm"/>
+                        </td> 
+                        <td>
+                            <span t-field="move.product_id.barcode"/>
+                        </td> 
+                        <td>                            
+                            <span t-field="move.description_picking"/>
+                        </td>
+                        <td>                            
+                            <span t-field="move.product_uom"/>
+                        </td>
+                        <td>
+                            <t t-set="qte_cde" t-value="env['stock.move'].recherche_qte_commande_stock_move(move)"/>
+                            <span t-esc="qte_cde"/>
+                        </td>
+                        <td>
+                            <span t-field="move.product_uom_qty"/>
+                        </td>
+                        <td>
+                            <t t-if="move.product_id.barcode">
+                                <img alt="Barcode" t-if="len(move.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', quote_plus(move.product_id.barcode or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                                <img alt="Barcode" t-elif="len(move.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN8', quote_plus(move.product_id.barcode or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                                <img alt="Barcode" t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', quote_plus(move.product_id.barcode or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                            </t>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </xpath>         
+        <xpath expr="//table[@name='stock_move_line_table']" position="replace">  
+            <table class="table table-sm o_main_table mt48" t-if="o.move_line_ids and o.state=='done'" name="stock_move_line_table">
+                <t t-set="has_serial_number" t-value="False"/>
+                <t t-set="has_serial_number" t-value="o.move_line_ids.mapped('lot_id')" groups="stock.group_lot_on_delivery_slip"/>
+                <thead>
+                    <tr>
+                        <th name="th_sml_no"><strong>No</strong></th>  
+                        <th name="th_sml_product"><strong>Product</strong></th>
+                        <t name="lot_serial" t-if="has_serial_number">
+                            <th>
+                                Lot/Serial Number
+                            </th>
+                        </t>
+                        <th name="th_sml_des"><strong>Designation</strong></th>
+                        <th name="th_sml_udm"><strong>UdM</strong></th>
+                        <th name="th_sml_qte_com"><strong>Qty Com</strong></th>
+                        <th name="th_sml_qte_liv"><strong>Qty Liv</strong></th>
+                        <th name="th_sml_code_barre"><strong>Barcode</strong></th>     
+                    </tr>
+                </thead>
+                <tbody>  
+                    <t t-set="nb_lig" t-value="0"/>              
+                    <t t-if="o.has_packages" name="has_packages">
+                        <t t-set="packages" t-value="o.move_line_ids.mapped('result_package_id')"/>
+                        <t t-foreach="packages" t-as="package">
+                            <t t-set="nb_lig" t-value="nb_lig + 1"/>
+                            <t t-call="stock.stock_report_delivery_package_section_line"/>
+                            <t t-set="package_move_lines" t-value="o.move_line_ids.filtered(lambda l: l.result_package_id == package)"/>
+                            <!-- If printing lots/serial numbers => keep products in original lines -->
+                            <t t-if="has_serial_number">
+                                <tr t-foreach="package_move_lines" t-as="move_line">
+                                    <t t-call="stock.stock_report_delivery_has_serial_move_line"/>
+                                </tr>
+                            </t>
+                            <!-- If not printing lots/serial numbers => merge lines with same product+description+uom -->
+                            <t t-else="">
+                                <t t-set="aggregated_lines" t-value="package_move_lines._get_aggregated_product_quantities()"/>
+                                <t t-call="stock.stock_report_delivery_aggregated_move_lines"/>
+                            </t>
+                        </t>
+                        <!-- Make sure we do another section for package-less products if they exist -->
+                        <t t-set="move_lines" t-value="o.move_line_ids.filtered(lambda l: not l.result_package_id)"/>
+                        <t t-if="move_lines" name="no_package_move_lines">
+                            <t t-call="stock.stock_report_delivery_no_package_section_line" name="no_package_section"/>
+                            <t t-if="has_serial_number">
+                                <tr t-foreach="move_lines" t-as="move_line">
+                                    <t t-set="nb_lig" t-value="nb_lig + 1"/>
+                                    <t t-call="stock.stock_report_delivery_has_serial_move_line"/>
+                                </tr>
+                            </t>
+                            <t t-else="">
+                                <t t-set="nb_lig" t-value="nb_lig + 1"/>
+                                <t t-set="aggregated_lines" t-value="move_lines._get_aggregated_product_quantities()"/>
+                                <t t-if="aggregated_lines">
+                                    <t t-call="stock.stock_report_delivery_aggregated_move_lines"/>
+                                </t>
+                            </t>
+                        </t>
+                    </t>
+                    <!-- No destination packages -->
+                    <t t-else="">
+                        <!-- If printing lots/serial numbers => keep products in original lines -->
+                        <t t-if="has_serial_number">
+                            <tr t-foreach="o.move_line_ids" t-as="move_line">
+                                <t t-set="nb_lig" t-value="nb_lig + 1"/>
+                                <t t-call="stock.stock_report_delivery_has_serial_move_line "/>
+                            </tr>
+                        </t>
+                        <!-- If not printing lots/serial numbers => merge lines with same product -->
+                        <t t-else="" name="aggregated_move_lines">
+                            <t t-set="aggregated_lines" t-value="o.move_line_ids._get_aggregated_product_quantities()"/>
+                            <t t-set="nb_lig" t-value="nb_lig + 1"/>    
+                            <t t-call="stock.stock_report_delivery_aggregated_move_lines"/>
+                        </t>
+                    </t>
+                </tbody>
+            </table>
+        </xpath>        
+        <xpath expr="//table[@name='stock_backorder_table']" position="replace">
+            <table class="table table-sm o_main_table" name="stock_backorder_table">
+                <thead>
+                    <tr>
+                        <th name="th_sm_no"><strong>No</strong></th>    
+                        <th name="th_sm_product"><strong>EAN Code</strong></th>
+                        <th name="th_sm_des"><strong>Designation</strong></th>
+                        <th name="th_sm_udm"><strong>UdM</strong></th>
+                        <th name="th_sm_qte_com"><strong>Qty Com</strong></th>
+                        <th name="th_sm_qte_liv"><strong>Qty Liv</strong></th>
+                        <th name="th_sm_code_barre"><strong>Barcode</strong></th>
+                    </tr>
+                </thead>
+                <t t-set="nb_lig_bo" t-value="0"/>        
+                <tbody>
+                    <t t-foreach="backorders" t-as="backorder">
+                        <t t-set="bo_lines" t-value="backorder.move_lines.filtered(lambda x: x.product_uom_qty)"/>
+                        <tr t-foreach="bo_lines" t-as="bo_line">
+                            <t t-set="nb_lig_bo" t-value="nb_lig_bo + 1"/> 
+                            <td>
+                                <span t-esc="nb_lig_bo"/>
+                            </td> 
+                            <td>
+                                <span t-field="bo_line.product_id.barcode"/>
+                            </td> 
+                            <td>                            
+                                <span t-field="bo_line.description_picking"/>
+                            </td>
+                            <td>                            
+                                <span t-field="bo_line.product_uom"/>
+                            </td>
+                            <td>
+                                <!--t t-set="qte_cde2" t-value="env['stock.move'].recherche_qte_commande_stock_move(bo_line)"/>
+                                <span t-esc="qte_cde2"/-->
+                                <span t-field="bo_line.product_uom_qty"/>
+                            </td>
+                            <td>                                
+                            </td>                        
+                            <td>
+                                <t t-if="bo_line.product_id.barcode">
+                                    <img alt="Barcode" t-if="len(bo_line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', quote_plus(bo_line.product_id.barcode or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                                    <img alt="Barcode" t-elif="len(bo_line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN8', quote_plus(bo_line.product_id.barcode or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                                    <img alt="Barcode" t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', quote_plus(bo_line.product_id.barcode or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                                </t>
+                            </td>                        
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </xpath>  
+        <xpath expr="//div[@name='signature']" position="replace">   
+            <div id="informations_pied_piece">
+                <br/>
+                <div class="row col-12">
+                    <div class="text-left col-6">
+                        <span style="font-size: 16px">  
+                            <strong >Total weight shipped : </strong>
+                        </span> 
+                        <span style="font-size: 16px">  
+                            <t t-set="poids_total" t-value="env['stock.picking'].calcul_poids_total(o)"/>    
+                            <t t-esc="'%.3f'%round(poids_total,3)"/> Kg
+                        </span>     
+                    </div>  
+                    <div class="text-right col-6">
+                        <span style="font-size: 16px">  
+                            <strong>Total quantity shipped : </strong>
+                        </span>
+                        <span style="font-size: 16px"> 
+                            <t t-set="qte_totale" t-value="env['stock.picking'].calcul_quantite_totale(o)"/>
+                            <t t-esc="'%.0f'%round(qte_totale,0)"/>                           
+                        </span>
+                    </div> 
+                </div>
+                <br/> 
+                <div class="row col-12">  
+                    <span style="font-size: 16px">  
+                        <strong >Comment : </strong>
+                    </span>
+                    <span t-field="o.note"/>
+                </div>    
+            </div>
+        </xpath>                 
+    </template>
+    <!--
+        Has Serial Move Line
+    -->
+    <template id="stock_report_delivery_has_serial_move_line_custom" inherit_id="stock.stock_report_delivery_has_serial_move_line">
+        <xpath expr="//td[1]" position="replace">  
+        </xpath>
+        <xpath expr="//t[@name='move_line_lot']" position="replace">
+        </xpath> 
+        <xpath expr="//td[2]" position="replace"> 
+            <t t-set="nb_lig" t-value="0"/> 
+            <t t-set="nb_lig" t-value="nb_lig + 1"/> 
+            <td>
+                <span t-esc="nb_lig"/>
+            </td> 
+            <td>
+                <span t-field="move_line.product_id.barcode"/>
+            </td> 
+            <t t-if="has_serial_number" name="move_line_lot">
+                <td><span t-field="move_line.lot_id.name"/></td>
+            </t>
+            <td>                       
+                <t t-if="not description and description != ''">
+                    <t t-set="description" t-value="move_line.move_id.description_picking"/>
+                </t>
+                <p t-if="description !='' and description != move_line.product_id.name">
+                    <span t-esc="description"/>
+                </p>
+            </td>
+            <td>                            
+                <span t-field="move_line.product_uom"/>
+            </td>
+            <td>
+                <!--t t-set="qte_cde" t-value="env['stock.move.line'].recherche_qte_commande_stock_move_line(move_line)"/-->
+                <t t-set="qte_cde2" t-value="env['stock.move'].recherche_qte_commande_stock_move(move_line)"/>
+                <span t-esc="qte_cde2"/>
+            </td>
+            <td>
+                <span t-field="move_line.product_uom_qty"/>
+            </td>      
+            <td>
+                <t t-if="move_line.product_id.barcode">
+                    <img alt="Barcode" t-if="len(move_line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', quote_plus(move_line.product_id.barcode or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                    <img alt="Barcode" t-elif="len(move_line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN8', quote_plus(move_line.product_id.barcode or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                    <img alt="Barcode" t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', quote_plus(move_line.product_id.barcode or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                </t>
+            </td> 
+        </xpath>            
+    </template>
+    <!--
+        Aggregated Move Lines
+    -->
+    <template id="stock_report_delivery_aggregated_move_lines_custom" inherit_id="stock.stock_report_delivery_aggregated_move_lines">
+        <xpath expr="//tr" position="replace"> 
+            <t t-set="nb_lig" t-value="0"/>   
+            <tr t-foreach="aggregated_lines" t-as="line">
+                <t t-set="nb_lig" t-value="nb_lig + 1"/> 
+                <td>
+                    <span t-esc="nb_lig"/>
+                </td>
+                <td>
+                    <span t-esc="aggregated_lines[line]['product'].barcode"/>
+                </td> 
+                <td>
+                    <span t-esc="aggregated_lines[line]['name']"/>
+                    <p t-if="aggregated_lines[line]['description']">
+                        <span t-esc="aggregated_lines[line]['description']"/>
+                    </p>
+                </td>
+                <td>                            
+                    <span t-esc="aggregated_lines[line]['product_uom']"/>
+                </td>
+                <td>
+                    <!-- Reliquat on n'imprime pas la qte commandée --> 
+                    <span t-esc="aggregated_lines[line]['qty_cde']"
+                        t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>                   
+                </td>
+                <td>                
+                    <span t-esc="aggregated_lines[line]['qty_done']"
+                        t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
+                </td>      
+                <td>
+                    <t t-set="codebarre" t-value="aggregated_lines[line]['product'].barcode"/> 
+                    <t t-if="codebarre">
+                        <img alt="Barcode" t-if="len(codebarre) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', quote_plus(codebarre or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                        <img alt="Barcode" t-elif="len(codebarre) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN8', quote_plus(codebarre or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                        <img alt="Barcode" t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', quote_plus(codebarre or ''), 600, 150)" style="width:100%;height::4rem;"/>
+                    </t>
+                </td>  
+            </tr>
+        </xpath>    
+    </template>  
+
+    <template id="stock_report_delivery_package_section_line_inherit_delivery_custom" inherit_id="delivery.stock_report_delivery_package_section_line_inherit_delivery">
+        <xpath expr="//td[@name='package_info']" position="replace">
+            <td colspan="99" name="package_info">
+                <span t-field="package.packaging_id.name"/>
+                <span> - </span>
+                <span t-field="package.name"/>
+                <t t-if="package.shipping_weight or package.weight">
+                    <!-- assume manually typed in value = priority -->
+                    <t t-if="package.shipping_weight">
+                        <span> - Weight : </span>
+                        <span t-field="package.shipping_weight"/>
+                        <span t-field="package.weight_uom_name"/>
+                    </t>
+                    <!-- otherwise default to calculated value -->
+                    <t t-else="">
+                        <span> - Weight (estimated) : </span>
+                        <span t-field="package.weight"/>
+                        <span t-field="package.weight_uom_name"/>
+                    </t>
+                </t>
+            </td>    
+        </xpath>
+    </template>
+</odoo>    

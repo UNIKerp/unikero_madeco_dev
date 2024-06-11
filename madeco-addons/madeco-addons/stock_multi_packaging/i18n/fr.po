@@ -1,0 +1,345 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_multi_packaging
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-06 15:07+0000\n"
+"PO-Revision-Date: 2022-10-06 17:10+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,help:stock_multi_packaging.field_stock_picking_type__repackaging_enable
+msgid "Allow repackaging in batch transfers"
+msgstr "Autoriser le re-colisage des paquets"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,help:stock_multi_packaging.field_stock_picking_type__choose_package_enable
+msgid "Allow to choose package type"
+msgstr "Permettre le choix des types de colis"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__barcode_view_enable
+msgid "Allow to operate in barcode app."
+msgstr "Autoriser l'opération dans l'application code-barre"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__allowed_packaging_ids
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__allowed_packaging_ids
+msgid "Allowed packaging"
+msgstr "Types de colis autorisés"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__product_packaging_ids
+msgid "Authorized packagings"
+msgstr "Types de colis autorisés"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__batch_id
+msgid "Batch"
+msgstr "Transfert"
+
+#. module: stock_multi_packaging
+#: model:ir.model,name:stock_multi_packaging.model_stock_picking_batch
+msgid "Batch Transfer"
+msgstr "Transfert en lot"
+
+#. module: stock_multi_packaging
+#: code:addons/stock_multi_packaging/models/stock_picking.py:0
+#: code:addons/stock_multi_packaging/models/stock_picking_batch.py:0
+#, python-format
+msgid "Choose a package type"
+msgstr "Choix du type de colis"
+
+#. module: stock_multi_packaging
+#: model:ir.model,name:stock_multi_packaging.model_choose_type_package
+msgid "Choose package"
+msgstr "Choix du colis"
+
+#. module: stock_multi_packaging
+#: model:ir.model,name:stock_multi_packaging.model_choose_batch_package
+msgid "Choose package in batch mode"
+msgstr "Choix du type de colis (batch)"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__company_id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__create_uid
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__create_date
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__default_product_packaging
+msgid "Default Product Packaging"
+msgstr "Type de colis par défaut"
+
+#. module: stock_multi_packaging
+#: model_terms:ir.ui.view,arch_db:stock_multi_packaging.choose_batch_package_view_form
+#: model_terms:ir.ui.view,arch_db:stock_multi_packaging.choose_type_package_view_form
+msgid "Discard"
+msgstr "Annuler"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__display_name
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__display_name
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_move_line__display_name
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_package_level__display_name
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking__display_name
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_batch__display_name
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__display_name
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_quant_package__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_move_line__id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_package_level__id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking__id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_batch__id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_quant_package__id
+msgid "ID"
+msgstr ""
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package____last_update
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package____last_update
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_move_line____last_update
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_package_level____last_update
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking____last_update
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_batch____last_update
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type____last_update
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_quant_package____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__write_uid
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification le"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__write_date
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__write_date
+msgid "Last Updated on"
+msgstr "Dernière modification le"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__move_line_ids
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__move_line_ids
+msgid "Move Line"
+msgstr "Mouvements d'article (Ligne de mouvement de stock)"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__picking_type_id
+msgid "Operation Type"
+msgstr "Type d'opération"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__package_ids
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__package_id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__package_ids
+#: model_terms:ir.ui.view,arch_db:stock_multi_packaging.choose_batch_package_view_form
+#: model_terms:ir.ui.view,arch_db:stock_multi_packaging.choose_type_package_view_form
+msgid "Package"
+msgstr "Colis"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__package_level
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__package_level_ids
+msgid "Package Level"
+msgstr "Niveau de Colisage"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_move_line__dest_package_type_id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_move_line__source_package_type_id
+msgid "Package Type"
+msgstr "Type de colis"
+
+#. module: stock_multi_packaging
+#: code:addons/stock_multi_packaging/wizard/choose_batch_package.py:0
+#: code:addons/stock_multi_packaging/wizard/choose_type_package.py:0
+#, python-format
+msgid "Package too heavy!"
+msgstr "Colis trop lourd !"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__choose_package_enable
+msgid "Package type"
+msgstr "Type de colis"
+
+#. module: stock_multi_packaging
+#: model:ir.model,name:stock_multi_packaging.model_stock_quant_package
+msgid "Packages"
+msgstr "Colis"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__packaging_id
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__packaging_id
+msgid "Packaging"
+msgstr "Emballage"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields.selection,name:stock_multi_packaging.selection__stock_picking_type__step__pack
+msgid "Packing"
+msgstr "Emballage"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields.selection,name:stock_multi_packaging.selection__stock_picking_type__step__pallet
+msgid "Palletizing"
+msgstr "Palettisation"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__picking_ids
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__picking_id
+#: model:ir.model.fields.selection,name:stock_multi_packaging.selection__stock_picking_type__step__pick
+msgid "Picking"
+msgstr "Collecte"
+
+#. module: stock_multi_packaging
+#: model:ir.model,name:stock_multi_packaging.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Type de préparation"
+
+#. module: stock_multi_packaging
+#: code:addons/stock_multi_packaging/models/stock_picking_batch.py:0
+#, python-format
+msgid ""
+"Please add 'Done' quantities to the batch picking to create a new pack."
+msgstr ""
+"Veuillez ajouter les quantités 'Fait' au transfert pour créer un nouveau "
+"colis."
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__auto_print_label_enable
+msgid "Print label upon packaging"
+msgstr "Imprimer automatiquement l'étiquette lors du colisage"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__auto_print_enable
+msgid "Print report upon validation"
+msgstr ""
+"Imprimer automatiquement le rapport lors de la validation du transfert"
+
+#. module: stock_multi_packaging
+#: model:ir.model,name:stock_multi_packaging.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Mouvements d'article (Ligne de mouvement de stock)"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields.selection,name:stock_multi_packaging.selection__stock_picking_type__step__recut
+msgid "Recut"
+msgstr "Recoupe"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__repackaging_enable
+msgid "Repackaging"
+msgstr "Recolisage"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__report_id
+msgid "Report"
+msgstr "Rapport"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__report_label_id
+msgid "Report label"
+msgstr "Modèle d'étiquette"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields.selection,name:stock_multi_packaging.selection__stock_picking_type__step__ship
+msgid "Shipping"
+msgstr "Expédition"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__shipping_weight
+msgid "Shipping Weight"
+msgstr "Poids"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__show_operations_details
+msgid "Show Operations Details"
+msgstr "Montrer les opérations détaillées"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_picking_type__step
+msgid "Step"
+msgstr "Etape"
+
+#. module: stock_multi_packaging
+#: model:ir.model,name:stock_multi_packaging.model_stock_package_level
+msgid "Stock Package Level"
+msgstr "Niveau de Colisage"
+
+#. module: stock_multi_packaging
+#. openerp-web
+#: code:addons/stock_multi_packaging/static/src/js/picking_client_action.js:0
+#, python-format
+msgid "The transfer has been validated"
+msgstr "Le transfert a été validé"
+
+#. module: stock_multi_packaging
+#: code:addons/stock_multi_packaging/wizard/choose_batch_package.py:0
+#: code:addons/stock_multi_packaging/wizard/choose_type_package.py:0
+#, python-format
+msgid ""
+"The weight of your package is higher than the maximum weight authorized for "
+"this package type. Please choose another package type."
+msgstr ""
+"Le poids de votre colis excède la valeur maximale autorisée. Veuillez "
+"sélectionner un autre type de colis."
+
+#. module: stock_multi_packaging
+#: model_terms:ir.ui.view,arch_db:stock_multi_packaging.choose_batch_package_view_form
+msgid "Total Weight"
+msgstr "Poids total"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,help:stock_multi_packaging.field_stock_quant_package__weight
+msgid "Total weight of all the products contained in the package."
+msgstr "Poids total de tous les articles contenus dans le colis."
+
+#. module: stock_multi_packaging
+#: model:ir.model,name:stock_multi_packaging.model_stock_picking
+msgid "Transfer"
+msgstr "Transfert"
+
+#. module: stock_multi_packaging
+#: model_terms:ir.ui.view,arch_db:stock_multi_packaging.choose_batch_package_view_form
+#: model_terms:ir.ui.view,arch_db:stock_multi_packaging.choose_type_package_view_form
+msgid "Validate"
+msgstr "Valider"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_stock_quant_package__weight
+msgid "Weight"
+msgstr "Poids"
+
+#. module: stock_multi_packaging
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_batch_package__weight_uom_name
+#: model:ir.model.fields,field_description:stock_multi_packaging.field_choose_type_package__weight_uom_name
+msgid "Weight unit of measure label"
+msgstr "Unité de mesure du poids"

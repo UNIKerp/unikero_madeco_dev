@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<record id="view_move_line_tree_custom" model="ir.ui.view">
+        <field name="name">view_move_line_tree_custom</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree" />
+        <field name="arch" type="xml">            
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="description_ligne_vente" string="Description vente" optional="hide" />                
+            </xpath>            
+        </field>
+    </record>    
+    <record id="view_move_line_form_custom" model="ir.ui.view">
+        <field name="name">view_move_line_form_custom</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_form" />
+        <field name="arch" type="xml">            
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="description_ligne_vente" string="Description vente"/>                
+            </xpath>            
+        </field>
+    </record>    
+</odoo>

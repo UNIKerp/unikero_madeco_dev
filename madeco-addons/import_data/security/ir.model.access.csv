@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_import_log,access_import_log,model_import_log,base.group_user,1,1,1,1
+access_import_encodage,access_import_encodage,model_import_encodage,base.group_user,1,1,1,1
+access_import_type_source,access_import_type_source,model_import_type_source,base.group_user,1,1,1,1
+access_import_source,access_import_source,model_import_source,base.group_user,1,1,1,1
+access_import_data,access_import_data,model_import_data,base.group_user,1,1,1,1
+access_menu_wizard,access_menu_wizard,model_menu_wizard,base.group_user,1,1,1,1
+access_import_wizard,access_import_wizard,model_import_wizard,base.group_user,1,1,1,1
+access_action_wizard,access_action_wizard,model_action_wizard,base.group_user,1,1,1,1

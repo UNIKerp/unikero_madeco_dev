@@ -1,0 +1,10 @@
+<odoo>
+
+    <record id="group_saas_support" model="res.groups">
+        <field name="name">SaaS Support</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="comment">Special group for superuser. Should not be used for client users</field>
+    </record>
+
+</odoo>

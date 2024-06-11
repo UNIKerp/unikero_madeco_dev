@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0"> 
+        <record id="parametrage_route_search" model="ir.ui.view">
+            <field name="name">parametrage_route_search</field>
+            <field name="model">parametrage.route</field>
+            <field name="arch" type="xml">
+                <search string="Recherche du paramétrage des routes">
+                    <field name="name"/>
+                    <field name="route_id"/>
+                    <separator />
+                    <filter name="xdock" string="Livraison XDOCK" domain="[('xdock', '=', True)]" />
+                    <filter name="recoupe" string="Commande de recoupe" domain="[('recoupe', '=', True)]" />
+                    <filter name="implantation" string="Commande d'implantation" domain="[('implantation', '=', True)]" />
+                    <separator />
+                    <group expand="0" string="Group By">
+                        <filter string="Par route" name="by_route" domain="[]" context="{'group_by': 'route_id'}" />
+                        <filter string="Par typplogie d'article" name="by_typologie" domain="[]" context="{'group_by': 'typologie_article'}" />
+                    </group>  
+                </search>
+            </field>
+        </record>
+        <record id="parametrage_route_tree" model="ir.ui.view">
+            <field name="name">parametrage_route_tree</field>
+            <field name="model">parametrage.route</field>
+            <field name="arch" type="xml">
+                <tree string="Paramétrage des routes">
+                    <field name="name"/>
+                    <field name="xdock"/>
+                    <field name="recoupe"/>
+                    <field name="implantation"/>
+                    <field name="typologie_article"/>
+                    <field name="route_id" options="{'no_open': True, 'no_create': True}" />
+                </tree>
+            </field>
+        </record>
+        <record id="parametrage_route_form" model="ir.ui.view">
+            <field name="name">parametrage_route_form</field>
+            <field name="model">parametrage.route</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Paramétrage des routes">
+                    <group>
+                        <field name="name"/>
+                        <field name="xdock"/>
+                        <field name="recoupe"/>
+                        <field name="implantation"/>
+                        <field name="typologie_article"/>
+                        <field name="route_id" options="{'no_open': True, 'no_create': True}" />
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_parametrage_route_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Paramétrage des routes</field>
+            <field name="res_model">parametrage.route</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="parametrage_route_search" />
+            <field name="help" type="html">
+                <h1 class="oe_view_nocontent_create">Créer un nouveau paramétrage des routes</h1>
+            </field> 
+        </record>              
+        <menuitem id="cparametrage_route_menu"
+            name="Paramétrage des routes"
+            parent="madeco_vente.sale_parameter_menu"
+            action="action_parametrage_route_act_window"
+            groups="sales_team.group_sale_manager"
+            sequence="250"
+        />    
+    </data>        
+</odoo>

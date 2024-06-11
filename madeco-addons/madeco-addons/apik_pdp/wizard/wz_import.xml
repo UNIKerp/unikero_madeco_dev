@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	
+	<record id="wizard_pdp_import_form" model="ir.ui.view">
+		<field name="name">pdp.import.wizard.form</field>
+		<field name="model">pdp.import.wizard</field>
+		<field name="arch" type="xml">
+			<form>
+				<h1>Ajouter le fichier que vous souhaitez importer</h1>
+				<group>
+					<field name="fichier"/>
+				</group>
+				<footer>
+					<button name="importer" type="object" string="Importer" class="oe_highlight"/>
+					ou
+					<button special="cancel" string="Annuler"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+	
+	<act_window id="launch_pdp_import_wizard" name="Importer fichier" res_model="pdp.import.wizard" view_mode="form" target="new" />
+
+	
+</odoo>

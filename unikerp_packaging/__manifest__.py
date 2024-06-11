@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Optimization Multi Packaging for batch',
+    'version': '14.0.0.1',
+    'category': 'Inventory/Inventory',
+    'description': "",
+    'summary': "Optimization of multi-packaging management for batch preparation to reduce response time",
+    'author': 'UNIKerp',
+    'website': 'www.unikerp.com',
+    'depends': ['stock',
+        # 'stock_multi_packaging',
+    ],
+    'data': [
+        'security/ir.model.access.csv',  
+        'views/unikerp_crontab.xml',
+    ],
+    'images':['static/description/logo_unik.jpeg',],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+    # 'price': 25,
+    # 'currency': 'EUR',
+    'maintainer' :'UNIKerp',
+    'support': 'contact@unikerp.com',
+    'license': 'LGPL-3',
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<record id="sale_order_custom" model="ir.ui.view">
+        <field name="name">sale.order.form.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="groupe_id" readonly="1"/>
+                <field name="centrale_id" readonly="1"/>
+                <field name="enseigne_id" readonly="1"/>
+            </xpath>
+            <xpath expr="//page[@name='order_lines']/field[@name='order_line']/form/group/group/field[@name='invoice_status']" position="before">
+                <field name="groupe_id" readonly="1"/>
+                <field name="centrale_id" readonly="1"/>
+                <field name="enseigne_id" readonly="1"/>
+            </xpath>
+        </field>
+    </record>    
+    <record id="sale_order_search_custom" model="ir.ui.view">
+        <field name="name">sale.order.search.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='customer']" position="after">
+                <separator/>
+                <filter name="group" string="Groupe" domain="[]" context="{'group_by': 'groupe_id'}"/>
+                <filter name="centrale" string="Centrale" domain="[]" context="{'group_by': 'centrale_id'}"/>
+                <filter name="enseigne" string="Enseigne" domain="[]" context="{'group_by': 'enseigne_id'}"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']" position="after">
+                <separator/>
+                <field name="groupe_id" string="Groupe" filter_domain="[('groupe_id', 'ilike', self)]"/>
+                <field name="centrale_id" string="Centrale" filter_domain="[('centrale_id', 'ilike', self)]"/>
+                <field name="enseigne_id" string="Enseigne" filter_domain="[('enseigne_id', 'ilike', self)]"/>
+            </xpath>
+        </field>
+    </record>    
+    <record id="sale_order_tree_custom" model="ir.ui.view">
+        <field name="name">sale.order.tree.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="groupe_id" optional="show" />
+                <field name="centrale_id" optional="show" />
+                <field name="enseigne_id" optional="show" />
+            </xpath>
+        </field>
+    </record>    
+    <record id="sale_quotation_tree_custom" model="ir.ui.view">
+        <field name="name">sale.quotation.tree.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="groupe_id" optional="show" />
+                <field name="centrale_id" optional="show" />
+                <field name="enseigne_id" optional="show" />
+            </xpath>
+        </field>
+    </record>	
+</odoo>

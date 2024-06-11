@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="madeco_stock_sscc.report_stock_picking_sscc">
+        <t t-call="web.html_container">
+            <div class="header"></div>
+
+            <t t-call="web.internal_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-if="doc.package_ids">
+                        <t t-if="doc.picking_type_id.step == 'pack'" t-set="packages" t-value="doc.package_ids.filtered(lambda x: not x.is_sscc_report_printed)" />
+                        <t t-else="" t-set="packages" t-value="doc.package_ids.sorted('create_date', True)[0]" />
+
+                        <t t-foreach="packages" t-as="package">
+                            <t t-set="sscc_gs1_identifier" t-value="package.company_id.sscc_gs1_identifier if package.company_id else doc.company_id.sscc_gs1_identifier if doc.company_id else '00'" />
+
+                            <div class="page">
+                                <t t-if="doc.sale_id and doc.picking_type_id.step == 'pack'">
+                                    <div class="row mb-4">
+                                        <div class="col-6">
+                                            <strong>
+                                                Order number :
+                                                <span t-field="doc.sale_id.name" />
+                                            </strong>
+                                        </div>
+                                        <div class="col-6">
+                                            <!-- TODO: check barcode type.... -->
+                                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', doc.sale_id.name, 600, 100)" style="width:300px;height:50px;" alt="Barcode" />
+                                        </div>
+                                    </div>
+                                </t>
+
+                                <div class="text-center mb-4">
+                                    <strong>
+                                        Delivery :
+                                        <span t-field="doc.name" />
+                                    </strong>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <t t-if="doc.company_id and doc.company_id.partner_id">
+                                            <span>From :</span>
+                                            <div t-field="doc.company_id.partner_id" t-options="{'widget': 'contact', 'fields': ['name', 'address', 'phone', 'email'], 'no_marker': True}" />
+                                        </t>
+                                    </div>
+                                    <div class="col-6">
+                                        <t t-if="doc.sale_id and doc.sale_id.partner_shipping_id">
+                                            <span>To :</span>
+                                            <div t-field="doc.sale_id.partner_shipping_id" t-options="{'widget': 'contact', 'fields': ['name', 'address'], 'no_marker': True}" />
+                                        </t>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <t t-if="doc.sale_id and doc.sale_id.client_order_ref and doc.picking_type_id.step != 'pallet'">
+                                            <strong>Customer reference</strong>
+                                            <p t-field="doc.sale_id.client_order_ref" />
+                                        </t>
+                                    </div>
+                                    <div class="col-6">
+                                        <t t-if="doc.sale_id and doc.sale_id.commitment_date">
+                                            <strong>Delivery date</strong>
+                                            <p t-field="doc.sale_id.commitment_date" t-options="{'widget': 'date'}" />
+                                        </t>
+                                    </div>
+                                </div>
+
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', package.name, 600, 100)" style="width: 300px; height: 50px; display: block; margin: 0 auto;" alt="Barcode" />
+                                <p class="text-center mb-4" t-esc="package.name" />
+
+                                <div class="row mb-4" t-if="doc.picking_type_id.step != 'pallet'">
+                                    <div class="col-9">
+                                        <t t-if="doc.sale_id and doc.sale_id.partner_id">
+                                            <span>Ordered by :</span>
+                                            <div t-field="doc.sale_id.partner_id" t-options="{'widget': 'contact', 'fields': ['name', 'address'], 'no_marker': True}" />
+                                        </t>
+                                    </div>
+                                    <div class="col-3">
+                                        <t t-if="doc.sale_id and doc.sale_id.partner_id and doc.sale_id.partner_id.code_magasin">
+                                            <strong t-field="doc.sale_id.partner_id.code_magasin" />
+                                        </t>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Weight : </strong>
+                                        <span t-esc="round(sum([m.product_uom_id._compute_quantity(m.qty_done, m.product_id.uom_id) * m.product_id.weight for m in doc.move_line_ids.filtered(lambda x: x.result_package_id == package)]), 2)" />
+                                        <span t-field="package.weight_uom_name" />
+                                    </div>
+                                    <div class="col-6">
+                                        <div t-if="doc.sale_id and doc.sale_id.partner_shipping_id">
+                                            <strong>XDOCK : </strong>
+                                            <t t-if="doc.picking_type_id.step != 'pallet' and not doc.sale_id.partner_shipping_id.xdock">
+                                                <span>No</span>
+                                            </t>
+                                            <t t-else="">
+                                                <span>Yes</span>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" t-if="doc.picking_type_id.step == 'pack'">
+                                    <div class="col-6">
+                                        <strong>Nb pieces : </strong>
+                                        <span t-esc="round(sum([m.qty_done for m in doc.move_line_ids_without_package.filtered(lambda x: x.result_package_id == package)]))" />
+                                    </div>
+                                    <div class="col-6"></div>
+                                </div>
+
+                                <div class="row" t-if="doc.picking_type_id.step == 'pallet'">
+                                    <div class="col-6">
+                                        <strong>Parcels : </strong>
+                                        <span t-esc="len(doc.move_line_ids.filtered(lambda x: x.result_package_id == package).mapped('package_id'))" />
+                                    </div>
+                                    <div class="col-6"></div>
+                                </div>
+
+                                <div class="text-center mb-4">
+                                    <strong>
+                                        N° SSCC :
+                                        <span t-esc="package.name" />
+                                    </strong>
+                                </div>
+
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=(%s)%s&amp;width=%s&amp;height=%s' % ('Code128', sscc_gs1_identifier, package.name, 600, 100)" style="width: 300px; height:50px; display: block; margin: 0 auto;" alt="Barcode" />
+                                <p class="text-center" t-esc="'({}){}'.format(sscc_gs1_identifier, package.name)" />
+                            </div>
+                        </t>
+
+                        <t t-if="doc.picking_type_id.step == 'pack'" t-set="is_printed" t-value="packages.set_sscc_report_printed()" />
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="madeco_stock_sscc.action_report_stock_picking_sscc" model="ir.actions.report">
+        <field name="name">SSCC</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="paperformat_id" ref="madeco_stock_sscc.paperformat_stock_picking_sscc" />
+        <field name="report_name">madeco_stock_sscc.report_stock_picking_sscc</field>
+        <field name="report_file">madeco_stock_sscc.report_stock_picking_sscc</field>
+        <!-- <field name="print_report_name">(object.picking_type_id in object.get_picking_types('pack') and 'SSCC-COLIS-LOCAL-{}*'.format(object.package_ids.sorted('create_date', True)[0].name[-10:] if object.package_ids else 'XXXX')) or 'SSCC-PALETTE-CHAINE-{}*'.format(object.package_ids.sorted('create_date', True)[0].name[-10:] if object.package_ids else 'XXX')</field> -->
+        <field name="print_report_name">(object._get_report_sscc_filename())</field>
+    </record>
+
+</odoo>
