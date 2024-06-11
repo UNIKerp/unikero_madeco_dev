@@ -9,15 +9,23 @@
                 expr="//field[@name='invoice_line_ids']//tree//field[@name='discount']"
                 position="after"
             >
-                <field name="discount2" optional="show" />
-                <field name="discount3" optional="show" />
+                <field
+                    name="discount2"
+                    groups="product.group_discount_per_so_line"
+                    optional="show"
+                />
+                <field
+                    name="discount3"
+                    groups="product.group_discount_per_so_line"
+                    optional="show"
+                />
             </xpath>
             <xpath
                 expr="//field[@name='invoice_line_ids']//form//field[@name='discount']"
                 position="after"
             >
-                <field name="discount2" />
-                <field name="discount3" />
+                <field name="discount2" groups="product.group_discount_per_so_line" />
+                <field name="discount3" groups="product.group_discount_per_so_line" />
             </xpath>
             <xpath
                 expr="//field[@name='line_ids']//tree//field[@name='discount']"

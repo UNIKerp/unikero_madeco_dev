@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_saas_client_dashboard,access_saas_client_dashboard,model_saas_client_dashboard,base.group_user,1,1,1,1
-access_db_configuration,access_db_configuration,model_db_configuration,base.group_user,1,1,1,1

@@ -169,15 +169,5 @@
             <field name="libelle_erreur">La facture n'est pas rattachée à une commande dans la base Odoo.</field>                    
             <field name="reussite">False</field> 
         </record>
-        <record id="0200" model="erreur.presta">
-            <field name="name">0200</field>
-            <field name="libelle_erreur">La mise à jour des ordres de fabrication a été réussie.</field>                    
-            <field name="reussite">True</field> 
-        </record>
-        <record id="0300" model="erreur.presta">
-            <field name="name">0300</field>
-            <field name="libelle_erreur">La mise à jour des ordres de fabrication a échoué.</field>                    
-            <field name="reussite">False</field> 
-        </record>
     </data>
 </odoo>
